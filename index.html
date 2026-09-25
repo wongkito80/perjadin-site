@@ -520,8 +520,9 @@ a.bento-card { display:block; }
 
 .regulasi-source{display:block;font-size:.78rem;color:var(--brand);font-weight:600;margin-top:.6rem}.faq-sources{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:1rem}.faq-sources a{text-decoration:underline;text-underline-offset:3px}a.regulasi-item:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 
-.lang-switch-static{display:flex;align-items:center;height:40px;border:1px solid var(--border);border-radius:20px;overflow:hidden;font-size:.76rem;font-weight:700;letter-spacing:.03em}
+.lang-switch-static{position:relative;z-index:20;pointer-events:auto;display:flex;align-items:center;height:40px;border:1px solid var(--border);border-radius:20px;overflow:hidden;font-size:.76rem;font-weight:700;letter-spacing:.03em}
 .lang-switch-static a,.lang-switch-static span{display:flex;align-items:center;justify-content:center;height:100%;min-width:38px;padding:0 .7rem}
+.lang-switch-static button{border:0;background:transparent;font:inherit;cursor:pointer;color:var(--text-muted);transition:all .2s var(--ease-out);height:100%;min-width:38px;padding:0 .7rem}.lang-switch-static button:hover{color:var(--brand);background:rgba(22,75,112,.06)}
 .lang-switch-static a{color:var(--text-muted);transition:all .2s var(--ease-out)}
 .lang-switch-static a:hover{color:var(--brand);background:rgba(22,75,112,.06)}
 .lang-switch-static .active{background:var(--brand);color:#fff}
@@ -554,7 +555,7 @@ a.bento-card { display:block; }
       <li><a href="#digital" class="nav-link">Inovasi</a></li>
     </ul>
     <div class="nav-actions">
-      <div class="lang-switch-static" aria-label="Pilihan bahasa"><span class="active" aria-current="page">ID</span><a href="/en.html" hreflang="en" lang="en" aria-label="Switch to English">EN</a></div>
+      <div class="lang-switch-static" aria-label="Pilihan bahasa"><span class="active" aria-current="page">ID</span><button type="button" id="switchToEnglish" aria-label="Switch to English" title="English">EN</button></div>
       <button class="nav-btn" id="themeToggle" aria-label="Aktifkan mode gelap" aria-pressed="false"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14A9 9 0 0 1 10 3a9 9 0 1 0 10 11Z"></path></svg></button>
       <button class="nav-hamburger" id="hamburger" aria-label="Buka atau tutup navigasi" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -1115,5 +1116,19 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 </script>
 
 
+<!-- LANG-NAV-ID-START -->
+<script>
+(function(){
+  var btn=document.getElementById('switchToEnglish');
+  if(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.assign('https://perjadin.site/en.html');
+    });
+  }
+})();
+</script>
+<!-- LANG-NAV-ID-END -->
 </body>
 </html>
