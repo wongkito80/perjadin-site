@@ -303,6 +303,48 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .section-subtitle { font-size: 1.02rem; color: var(--text-muted); line-height: 1.7; }
 
 .struktur-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.struktur-leader{
+  position:relative;
+  max-width:760px;
+  margin:0 auto 2.4rem;
+  padding:1.6rem 1.8rem;
+  background:linear-gradient(135deg, rgba(22,75,112,.07), rgba(181,139,66,.08));
+  border:1px solid rgba(181,139,66,.38);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:1.2rem;
+  align-items:center;
+}
+.struktur-leader::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-2.4rem;
+  width:1px;
+  height:2.4rem;
+  background:linear-gradient(to bottom, rgba(181,139,66,.75), rgba(22,75,112,.18));
+}
+.struktur-leader-icon{
+  width:64px;height:64px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:#142D45;color:#E9CB8D;border:1px solid #B58B42;
+  flex-shrink:0;
+}
+.struktur-leader-icon .ui-icon{width:30px;height:30px}
+.struktur-leader-eyebrow{
+  display:block;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#8B6A32;margin-bottom:.25rem;
+}
+.struktur-leader h3{font-size:1.18rem;font-weight:800;margin-bottom:.35rem}
+.struktur-leader p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:0}
+@media(max-width:640px){
+  .struktur-leader{grid-template-columns:1fr;text-align:center;padding:1.4rem}
+  .struktur-leader-icon{margin:0 auto}
+}
+
 .struktur-card {
   background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: 2rem; text-align: center; transition: all 0.4s var(--ease-out);
@@ -595,7 +637,7 @@ a.bento-card { display:block; }
         <span>Work Unit of the Secretariat General of DPR RI</span>
       </div>
       <h1>Travel <em>Division</em><br>Secretariat General of DPR RI</h1>
-      <p class="hero-desc">A work unit under the Bureau of Finance that administers domestic and international official travel for Members of DPR RI and employees of the Secretariat General of DPR RI.</p>
+      <p class="hero-desc">The Travel Division is a work unit under the Bureau of Finance, led by the Head of the Travel Division, and is responsible for administering and coordinating domestic and international official travel for Members of DPR RI and employees of the Secretariat General of DPR RI.</p>
       <div class="hero-actions">
         <a href="#struktur" class="btn btn-primary"><span>Explore Subdivisions</span> <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a>
         <a href="#faq" class="btn btn-ghost"><span>Official Travel FAQ</span></a>
@@ -614,8 +656,16 @@ a.bento-card { display:block; }
   <div class="section-inner">
     <div class="section-header centered reveal">
       <div class="section-label">Organizational Structure</div>
-      <h2 class="section-title">Subdivisions Under the Travel Division</h2>
-      <p class="section-subtitle">Click each subdivision to view details and access related services</p>
+      <h2 class="section-title">Travel Division Structure</h2>
+      <p class="section-subtitle">The Head of the Travel Division leads and coordinates the three implementing subdivisions within the Travel Division</p>
+    </div>
+    <div class="struktur-leader reveal">
+      <div class="struktur-leader-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="7" r="4"></circle><path d="M5 21v-2a7 7 0 0 1 14 0v2"></path><path class="icon-accent" d="M9 13h6"></path></svg></div>
+      <div>
+        <span class="struktur-leader-eyebrow">Unit Leadership</span>
+        <h3>Head of the Travel Division</h3>
+        <p>Leads and coordinates the work of the Travel Division, provides control and guidance, monitors and evaluates official travel administration, and ensures effective, orderly, and accountable coordination among the subdivisions.</p>
+      </div>
     </div>
     <div class="struktur-grid">
       <div class="struktur-card reveal" onclick="openModal('modal-dewan')">
