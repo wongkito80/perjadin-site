@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://perjadin.site/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://perjadin.site/">
+<meta property="og:title" content="Bagian Perjalanan — Setjen DPR RI">
+<meta property="og:description" content="Informasi perjalanan dinas, regulasi, FAQ, dan referensi layanan Bagian Perjalanan Sekretariat Jenderal DPR RI.">
+<title>Bagian Perjalanan — Setjen DPR RI</title>
+<meta name="description" content="Website Bagian Perjalanan Biro Keuangan Sekretariat Jenderal DPR RI yang menyediakan informasi perjalanan dinas, referensi regulasi, FAQ, dan layanan terkait.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --brand: #164B70;
+  --brand-light: #28688F;
+  --brand-dark: #103750;
+  --brand-soft: #EAF2F8;
+
+  --cinder: #142D45;
+  --cinder-light: #23455F;
+  --cinder-dark: #102438;
+  --cinder-deep: #0B1929;
+
+  --white: #FFFFFF;
+  --off-white: #FAFAFA;
+  --gray-50: #F8F9FB;
+  --gray-100: #F1F3F5;
+  --gray-200: #E4E7EB;
+  --gray-300: #CBD2D9;
+  --gray-400: #9AA5B1;
+  --gray-500: #7B8794;
+  --gray-600: #616E7C;
+  --gray-700: #52606D;
+  --gray-800: #3E4C59;
+  --gray-900: #1F2933;
+
+  --bg: #FFFFFF;
+  --bg-alt: #F8F9FB;
+  --text: var(--cinder);
+  --text-muted: var(--gray-600);
+  --border: var(--gray-200);
+  --card-bg: #FFFFFF;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,0.14);
+  --shadow-brand: 0 8px 32px rgba(22,75,112,0.25);
+
+  --container: 1200px;
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #121218;
+  --bg-alt: #102438;
+  --text: #E8E8F0;
+  --text-muted: #9A9AB0;
+  --border: #2A2A38;
+  --card-bg: #1E1E2A;
+  --gray-50: #102438;
+  --gray-100: #24242E;
+  --gray-200: #2A2A38;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,0.6);
+  --shadow-brand: 0 8px 32px rgba(22,75,112,0.35);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px; line-height: 1.65;
+  color: var(--text);
+  background: #FFFFFF;
+  overflow-x: hidden;
+  transition: background 0.5s var(--ease-out), color 0.5s var(--ease-out);
+  -webkit-font-smoothing: antialiased;
+}
+body.no-scroll { overflow: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+::selection { background: var(--brand); color: white; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 5px; border: 2px solid var(--gray-100); }
+::-webkit-scrollbar-thumb:hover { background: var(--brand); }
+
+#loader {
+  position: fixed; inset: 0;
+  background: linear-gradient(135deg, var(--cinder-deep) 0%, var(--cinder) 50%, var(--cinder-deep) 100%);
+  z-index: 99999;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2rem;
+  transition: opacity 0.8s var(--ease-out), visibility 0.8s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-logo {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; font-weight: 800;
+  color: white; display: flex; align-items: center; gap: 0.75rem;
+  animation: loaderFadeIn 0.8s var(--ease-out) both;
+}
+.loader-logo span { color: var(--brand-light); }
+.loader-bar-wrap { width: 260px; height: 3px; background: rgba(255,255,255,0.12); border-radius: 2px; overflow: hidden; }
+.loader-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--brand), var(--brand-light)); border-radius: 2px; animation: loaderProgress 1.8s var(--ease-out) forwards; }
+@keyframes loaderProgress { 0% { width: 0%; } 40% { width: 45%; } 70% { width: 75%; } 100% { width: 100%; } }
+@keyframes loaderFadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.loader-tagline { font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 500; }
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9000;
+  transition: all 0.4s var(--ease-out);
+}
+.nav::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  opacity: 0; transition: opacity 0.4s var(--ease-out);
+}
+[data-theme="dark"] .nav::before { background: rgba(18,18,24,0.9); }
+.nav.scrolled::before { opacity: 1; }
+.nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: var(--container); margin: 0 auto; padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem; position: relative;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.7rem; font-weight: 800; font-size: 1rem; flex-shrink: 0; transition: opacity 0.3s; }
+.nav-brand:hover { opacity: 0.75; }
+.nav-brand-emblem {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: white; box-shadow: var(--shadow-brand);
+}
+.nav-brand-text small { display: block; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); line-height: 1.2; }
+.nav-links { display: flex; gap: 0.3rem; list-style: none; align-items: center; }
+.nav-links a {
+  position: relative; padding: 0.6rem 0.9rem; font-size: 0.85rem; font-weight: 500;
+  color: var(--text-muted); border-radius: var(--radius-sm); transition: all 0.25s var(--ease-out); white-space: nowrap;
+}
+.nav-links a:hover { color: var(--text); background: var(--gray-100); }
+.nav-links a.active { color: var(--brand); font-weight: 600; }
+.nav-links a.active::after { content: ''; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 18px; height: 2px; background: var(--brand); border-radius: 1px; }
+.nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+.nav-btn {
+  width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.05rem; color: var(--text-muted); background: transparent; border: 1px solid var(--border); transition: all 0.25s var(--ease-out);
+}
+.nav-btn:hover { color: var(--brand); border-color: var(--brand); background: rgba(22,75,112,0.06); transform: translateY(-1px); }
+.nav-lang-btn { width: auto; padding: 0 0.9rem; border-radius: 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.35s var(--ease-out); transform-origin: center; }
+.nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: flex-end;
+  padding: 8rem 2rem 5rem; overflow: hidden;
+  background: #FFFFFF;
+}
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 55%;
+  opacity: 1;
+  transition: transform 8s var(--ease-out);
+  filter: saturate(1.05) contrast(1.08) brightness(1.05);
+}
+.hero:hover .hero-bg img { transform: scale(1.04); }
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top,
+    rgba(255,255,255,0.98) 0%,
+    rgba(255,255,255,0.88) 15%,
+    rgba(255,255,255,0.55) 40%,
+    rgba(255,255,255,0.15) 65%,
+    rgba(255,255,255,0.05) 100%);
+}
+.hero-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 85% 15%, rgba(22,75,112,0.08), transparent 50%),
+              radial-gradient(ellipse at 15% 85%, rgba(22,75,112,0.04), transparent 45%);
+  z-index: 1;
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: var(--container); margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 4rem; align-items: flex-end;
+}
+.hero-content { max-width: 720px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 1.1rem; border-radius: 100px;
+  background: rgba(22,75,112,0.08);
+  border: 1px solid rgba(22,75,112,0.2);
+  backdrop-filter: blur(12px);
+  color: var(--brand-dark);
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  animation: heroFadeUp 1s var(--ease-out) 0.3s both;
+}
+.hero-eyebrow-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 0 12px var(--brand);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+.hero h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.03em; color: var(--cinder);
+  margin-bottom: 1.5rem;
+  animation: heroFadeUp 1s var(--ease-out) 0.45s both;
+}
+.hero h1 em { font-style: italic; color: var(--brand); font-weight: 600; }
+.hero-desc {
+  font-size: 1.08rem; line-height: 1.7;
+  color: var(--gray-700);
+  max-width: 560px; margin-bottom: 2.5rem;
+  animation: heroFadeUp 1s var(--ease-out) 0.6s both;
+}
+.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; animation: heroFadeUp 1s var(--ease-out) 0.75s both; }
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.9rem 1.8rem; border-radius: 100px;
+  font-size: 0.93rem; font-weight: 600;
+  letter-spacing: -0.01em; transition: all 0.3s var(--ease-out);
+}
+.btn-primary { background: var(--brand); color: white; box-shadow: var(--shadow-brand); }
+.btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(22,75,112,0.4); }
+.btn-ghost {
+  background: rgba(255,255,255,0.85);
+  color: var(--cinder);
+  border: 1.5px solid var(--gray-300);
+  backdrop-filter: blur(12px);
+}
+.btn-ghost:hover { background: white; border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+.btn-arrow { transition: transform 0.3s var(--ease-out); }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+.hero-stats { display: flex; flex-direction: column; gap: 1rem; animation: heroFadeUp 1s var(--ease-out) 0.9s both; }
+.hero-stat {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--gray-200);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius); padding: 1.1rem 1.4rem;
+  min-width: 180px; transition: all 0.35s var(--ease-out);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.hero-stat:hover { background: white; border-color: var(--brand); transform: translateX(-4px); box-shadow: 0 8px 24px rgba(22,75,112,0.15); }
+.hero-stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cinder); line-height: 1; margin-bottom: 0.25rem; }
+.hero-stat-value span { color: var(--brand); }
+.hero-stat-label { font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: var(--gray-500); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  animation: heroFadeUp 1s var(--ease-out) 1.2s both;
+}
+.hero-scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--gray-400), transparent); position: relative; overflow: hidden; }
+.hero-scroll-line::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 40%; background: var(--brand); animation: scrollLine 2s ease-in-out infinite; }
+@keyframes scrollLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(250%); } }
+
+.section { padding: 7rem 2rem; position: relative; background: #FFFFFF; }
+.section-alt { background: #F8F9FB; }
+.section-inner { max-width: var(--container); margin: 0 auto; }
+.section-header { margin-bottom: 4rem; max-width: 640px; }
+.section-header.centered { margin-left: auto; margin-right: auto; text-align: center; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--brand); margin-bottom: 1rem;
+}
+.section-label::before { content: ''; width: 28px; height: 2px; background: linear-gradient(90deg, var(--brand), var(--brand-light)); border-radius: 1px; }
+.section-header.centered .section-label::before { display: none; }
+.section-header.centered .section-label { justify-content: center; }
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.025em; margin-bottom: 1rem;
+}
+.section-subtitle { font-size: 1.02rem; color: var(--text-muted); line-height: 1.7; }
+
+.struktur-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.struktur-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 2rem; text-align: center; transition: all 0.4s var(--ease-out);
+  position: relative; overflow: hidden; cursor: pointer;
+}
+.struktur-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--brand), var(--brand-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease-out); }
+.struktur-card:hover::before { transform: scaleX(1); }
+.struktur-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.struktur-icon { width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, var(--gray-100), var(--gray-50)); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem; transition: all 0.4s var(--ease-out); }
+.struktur-card:hover .struktur-icon { background: linear-gradient(135deg, var(--brand), var(--brand-dark)); transform: scale(1.1); box-shadow: var(--shadow-brand); }
+.struktur-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.struktur-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+.struktur-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; font-weight: 600; color: var(--brand); transition: gap 0.3s; }
+.struktur-card:hover .struktur-link { gap: 0.7rem; }
+
+.regulasi-category { margin-bottom: 3rem; }
+.regulasi-category-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--gray-200); display: flex; align-items: center; gap: 0.7rem; }
+.regulasi-category-title .cat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; color: white; }
+.cat-icon.dasar { background: linear-gradient(135deg, var(--cinder), var(--cinder-light)); }
+.cat-icon.operasional { background: linear-gradient(135deg, var(--brand), var(--brand-light)); }
+.cat-icon.keuangan { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); }
+.cat-icon.pdln { background: linear-gradient(135deg, var(--cinder-light), var(--cinder)); }
+.cat-icon.paspor { background: linear-gradient(135deg, var(--brand-light), var(--brand-dark)); }
+.regulasi-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.regulasi-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.6rem; display: flex; align-items: flex-start; gap: 1.2rem; transition: all 0.35s var(--ease-out); position: relative; overflow: hidden; cursor: pointer; }
+.regulasi-item::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: linear-gradient(to bottom, var(--brand), var(--brand-light)); transform: scaleY(0); transform-origin: top; transition: transform 0.4s var(--ease-out); }
+.regulasi-item:hover::before { transform: scaleY(1); }
+.regulasi-item:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: transparent; }
+.regulasi-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--brand); line-height: 1; flex-shrink: 0; width: 40px; opacity: 0.4; transition: opacity 0.3s; }
+.regulasi-item:hover .regulasi-num { opacity: 1; }
+.regulasi-content { flex: 1; }
+.regulasi-content h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.4; }
+.regulasi-content p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+.regulasi-tag { display: inline-block; margin-top: 0.4rem; padding: 0.18rem 0.65rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.tag-utama { background: rgba(22,75,112,0.1); color: var(--brand); }
+.tag-penting { background: rgba(22,75,112,0.08); color: var(--brand-dark); }
+.tag-terkini { background: rgba(40,104,143,0.1); color: var(--brand); }
+.tag-pmk { background: rgba(45,45,58,0.1); color: var(--cinder); }
+.tag-pdln { background: rgba(45,45,58,0.12); color: var(--cinder); }
+.tag-paspor { background: rgba(16,55,80,0.1); color: var(--brand-dark); }
+
+.faq-list { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s var(--ease-out); }
+.faq-item:hover { box-shadow: var(--shadow-md); }
+.faq-question { padding: 1.3rem 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; font-weight: 600; font-size: 0.98rem; transition: all 0.3s; }
+.faq-question:hover { color: var(--brand); }
+.faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: var(--text-muted); transition: all 0.35s var(--ease-out); flex-shrink: 0; }
+.faq-item.open .faq-icon { background: var(--brand); color: white; transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
+.faq-item.open .faq-answer { max-height: 600px; }
+.faq-answer-inner { padding: 0 1.6rem 1.5rem; color: var(--text-muted); font-size: 0.92rem; line-height: 1.75; border-top: 1px solid var(--border); padding-top: 1.2rem; }
+.faq-answer-inner a { color: var(--brand); font-weight: 600; text-decoration: underline; }
+.faq-answer-inner a:hover { color: var(--brand-dark); }
+.faq-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-right: 0.5rem; }
+.badge-dn { background: rgba(22,75,112,0.1); color: var(--brand); }
+.badge-ln { background: rgba(45,45,58,0.1); color: var(--cinder); }
+
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.25rem; }
+.bento-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.4s var(--ease-out); position: relative; overflow: hidden; cursor: pointer; }
+.bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.bento-card-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.3rem; background: var(--gray-100); transition: all 0.4s var(--ease-out); }
+.bento-card:hover .bento-card-icon { background: linear-gradient(135deg, var(--brand), var(--brand-dark)); transform: scale(1.08); box-shadow: var(--shadow-brand); }
+.bento-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+.bento-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.bento-card .bento-meta { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
+.bento-card .bento-meta strong { color: var(--brand); }
+.bento-card .bento-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.8rem; font-size: 0.82rem; font-weight: 600; color: var(--brand); transition: gap 0.3s; }
+.bento-card:hover .bento-link { gap: 0.7rem; }
+.bento-wide { grid-column: span 7; } .bento-narrow { grid-column: span 5; }
+.bento-third { grid-column: span 4; } .bento-half { grid-column: span 6; }
+.bento-accent { background: linear-gradient(135deg, var(--cinder-dark) 0%, var(--cinder) 100%); color: white; border: none; }
+.bento-accent .bento-card-icon { background: rgba(255,255,255,0.1); }
+.bento-accent p { color: rgba(255,255,255,0.8); }
+.bento-accent::after { content: ''; position: absolute; top: -40%; right: -15%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(22,75,112,0.3), transparent 70%); pointer-events: none; }
+.bento-accent .bento-meta { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+.bento-accent .bento-meta strong { color: var(--brand-light); }
+.bento-accent .bento-link { color: var(--brand-light); }
+.bento-accent h3 { color: white; }
+
+.modal-overlay { position: fixed; inset: 0; z-index: 9500; background: rgba(14,14,24,0.75); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; visibility: hidden; transition: all 0.35s var(--ease-out); }
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-box { background: var(--card-bg); border-radius: var(--radius-lg); max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 2.5rem; position: relative; transform: translateY(20px) scale(0.97); transition: all 0.35s var(--ease-out); box-shadow: var(--shadow-xl); }
+.modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+.modal-close { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-muted); background: var(--gray-100); transition: all 0.25s; }
+.modal-close:hover { background: var(--brand); color: white; }
+.modal-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.modal-box h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; }
+.modal-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1rem; }
+.modal-tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; background: rgba(22,75,112,0.1); color: var(--brand); margin-bottom: 1rem; }
+.modal-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.modal-actions .btn { padding: 0.7rem 1.4rem; font-size: 0.85rem; }
+.btn-outline { background: transparent; color: var(--brand); border: 1.5px solid var(--brand); }
+.btn-outline:hover { background: var(--brand); color: white; }
+
+.footer { background: linear-gradient(135deg, var(--cinder-deep) 0%, var(--cinder-dark) 50%, var(--cinder) 100%); color: rgba(255,255,255,0.7); padding: 5rem 2rem 2rem; position: relative; overflow: hidden; }
+.footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--brand), var(--brand-light), transparent); }
+.footer-inner { max-width: var(--container); margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+.footer-brand-icon { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg, var(--brand), var(--brand-dark)); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; }
+.footer-desc { font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.5); max-width: 340px; }
+.footer h4 { color: white; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.3rem; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.7rem; }
+.footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.5); transition: all 0.3s; display: inline-block; }
+.footer-links a:hover { color: var(--brand-light); transform: translateX(4px); }
+.footer-bottom { padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+  .hero-stat { min-width: 150px; flex: 1; }
+  .bento-wide, .bento-narrow, .bento-third, .bento-half { grid-column: span 12; }
+  .struktur-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { position: fixed; top: 0; right: -100%; width: 85%; max-width: 360px; height: 100vh; background: var(--card-bg); flex-direction: column; align-items: flex-start; padding: 6rem 2rem 2rem; gap: 0.5rem; box-shadow: -12px 0 48px rgba(0,0,0,0.15); transition: right 0.45s var(--ease-out); z-index: 8999; overflow-y: auto; }
+  .nav-links.open { right: 0; }
+  .nav-links a { width: 100%; padding: 0.9rem 1rem; font-size: 1rem; }
+  .nav-links a.active::after { display: none; }
+  .nav-links a.active { background: rgba(22,75,112,0.08); border-left: 3px solid var(--brand); }
+  .nav-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); opacity: 0; visibility: hidden; transition: all 0.4s; z-index: 8998; }
+  .nav-overlay.open { opacity: 1; visibility: visible; }
+}
+@media (max-width: 768px) {
+  .section { padding: 5rem 1.4rem; }
+  .hero { padding: 7rem 1.4rem 4rem; }
+  .hero-scroll { display: none; }
+  .hero-stat { min-width: 100%; }
+  .struktur-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .regulasi-item { flex-direction: column; gap: 0.5rem; }
+  .regulasi-num { width: auto; }
+  .hero-bg::after {
+    background: linear-gradient(to top,
+      rgba(255,255,255,0.98) 0%,
+      rgba(255,255,255,0.92) 25%,
+      rgba(255,255,255,0.7) 50%,
+      rgba(255,255,255,0.3) 80%,
+      rgba(255,255,255,0.1) 100%);
+  }
+}
+@media (max-width: 480px) {
+  .nav-inner { padding: 0.9rem 1rem; }
+  .nav-brand-text { display: none; }
+  .hero h1 { font-size: 1.8rem; }
+  .section-title { font-size: 1.5rem; }
+}
+
+/* Palette: navy / muted gold / white. Gold is an accent, not body text. */
+:root { --gold:#B58B42; --gold-light:#E9CB8D; --text-muted:#536579; }
+body,.section,.hero { background:var(--bg); }
+.section-alt { background:var(--bg-alt); }
+.nav::before { opacity:1; }
+.hero { border-bottom:3px solid var(--gold); }
+.hero h1,.hero-stat-value { color:var(--text); }
+.hero-desc { color:var(--text-muted); }
+.hero-stat { background:var(--card-bg); }
+.hero-eyebrow { background:var(--card-bg); color:var(--brand); }
+.bento-accent .bento-link,.bento-accent .bento-meta strong,.loader-logo span { color:var(--gold-light); }
+.bento-accent .bento-meta,.footer-desc,.footer-links a,.footer-bottom,.loader-tagline { color:#C3CFDD; }
+.footer-links a:hover { color:var(--gold-light); }
+.footer::before { background:var(--gold); height:3px; }
+.nav-brand-emblem { border:1px solid var(--gold); }
+:focus-visible { outline:3px solid var(--gold); outline-offset:5px; }
+section[id] { scroll-margin-top:90px; }
+.skip-link { position:fixed; top:-80px; left:16px; z-index:100000; background:var(--card-bg); padding:12px 20px; }
+.skip-link:focus { top:12px; }
+a.bento-card { display:block; }
+.faq-question { width:100%; text-align:left; color:var(--text); line-height:1.6; }
+.faq-item.open .faq-answer { max-height:none; }
+.modal-box { overscroll-behavior:contain; }
+.nav-hamburger { position:relative; z-index:9001; }
+[data-theme="dark"] { --bg:#0C1928; --bg-alt:#112236; --card-bg:#172C42; --text:#EEF3F8; --text-muted:#B9C9D9; --border:#38516A; --brand:#9BCBF0; --brand-dark:#B7DFFF; --gray-600:#B9C9D9; --gray-700:#B9C9D9; }
+[data-theme="dark"] .nav::before { background:rgba(12,25,40,.97); }
+[data-theme="dark"] .hero-bg::after { background:linear-gradient(to top,#0C1928 0%,rgba(12,25,40,.9) 35%,rgba(12,25,40,.5) 100%); }
+[data-theme="dark"] .btn-primary,[data-theme="dark"] .btn-outline:hover,[data-theme="dark"] .faq-item.open .faq-icon { color:#0C1928; }
+[data-theme="dark"] .tag-pmk,[data-theme="dark"] .tag-pdln { color:var(--text); }
+[data-theme="dark"] .hero-stat:hover { background:var(--card-bg); }
+@media(max-width:480px) { .modal-overlay { padding:1rem; } .modal-box { padding:2.8rem 1.3rem 1.5rem; } .loader-logo { font-size:1.5rem; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .reveal { opacity:1; transform:none; } }
+
+/* Institutional vector icons: self-contained, consistent 24-unit grid. */
+.ui-icon { width:1.15em; height:1.15em; display:inline-block; vertical-align:-.18em; flex-shrink:0; pointer-events:none; }
+.icon-accent { stroke:var(--gold); }
+.struktur-icon,.bento-card-icon,.modal-icon { color:#164B70; background:linear-gradient(145deg,#F6F9FC,#E5EDF5); border:1px solid #CEDBE7; box-shadow:inset 0 1px 0 #fff,0 5px 14px rgba(20,45,69,.05); }
+.struktur-icon { width:72px; height:72px; border-radius:18px; }
+.struktur-icon .ui-icon { width:36px; height:36px; }
+.bento-card-icon { width:60px; height:60px; border-radius:15px; }
+.bento-card-icon .ui-icon { width:30px; height:30px; }
+.modal-icon { display:flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:16px; }
+.modal-icon .ui-icon { width:32px; height:32px; }
+.nav-brand-emblem,.footer-brand-icon { background:#142D45; color:#E9CB8D; border:1px solid #B58B42; }
+.nav-brand-emblem .ui-icon,.footer-brand-icon .ui-icon { width:25px; height:25px; }
+.cat-icon .ui-icon { width:23px; height:23px; }
+.cat-icon { background:#142D45!important; border:1px solid rgba(181,139,66,.65); }
+.struktur-card:hover .struktur-icon,.bento-card:hover .bento-card-icon,.bento-accent .bento-card-icon { background:#142D45; border-color:#B58B42; color:#F2F6FA; transform:translateY(-2px); }
+.bento-accent .bento-card-icon { box-shadow:none; }
+.struktur-card:hover .icon-accent,.bento-card:hover .icon-accent,.bento-accent .icon-accent { stroke:#E9CB8D; }
+.loader-logo>.ui-icon { width:42px; height:42px; color:#E9CB8D; }
+.nav-btn .ui-icon { width:20px; height:20px; }
+.faq-icon .ui-icon,.modal-close .ui-icon { width:17px; height:17px; }
+.bento-link .ui-icon,.struktur-link .ui-icon,.btn .ui-icon { width:16px; height:16px; }
+[data-theme="dark"] .struktur-icon,[data-theme="dark"] .bento-card-icon,[data-theme="dark"] .modal-icon { background:#203B54; border-color:#4C6276; color:#D6E7F5; box-shadow:inset 0 1px 0 rgba(255,255,255,.06); }
+[data-theme="dark"] .icon-accent { stroke:#E9CB8D; }
+
+.regulasi-source{display:block;font-size:.78rem;color:var(--brand);font-weight:600;margin-top:.6rem}.faq-sources{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:1rem}.faq-sources a{text-decoration:underline;text-underline-offset:3px}a.regulasi-item:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+</style>
+<noscript><style>#loader{display:none}body.no-scroll{overflow:auto}.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body class="no-scroll">
+<a class="skip-link" href="#struktur">Langsung ke konten</a>
+
+<div id="loader">
+  <div class="loader-logo"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg> Bagian<span>Perjalanan</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
+  <div class="loader-tagline">MEMUAT UNIT KERJA</div>
+</div>
+
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">
+      <div class="nav-brand-emblem"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div>
+      <div class="nav-brand-text">
+        <span>Bagian Perjalanan</span>
+        <small>Setjen DPR RI</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Beranda</a></li>
+      <li><a href="#struktur" class="nav-link">Subbagian</a></li>
+      <li><a href="#regulasi" class="nav-link">Regulasi</a></li>
+      <li><a href="#faq" class="nav-link">FAQ</a></li>
+      <li><a href="#digital" class="nav-link">Inovasi</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn nav-lang-btn" id="langToggle" aria-label="Pilihan bahasa">🇮🇩 ID</button>
+      <button class="nav-btn" id="themeToggle" aria-label="Aktifkan mode gelap" aria-pressed="false"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14A9 9 0 0 1 10 3a9 9 0 1 0 10 11Z"></path></svg></button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Buka atau tutup navigasi" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/DPR-MPR_building_complex.jpg" alt="Gedung DPR RI" onerror="this.remove()">
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span>Unit Kerja Setjen DPR RI</span>
+      </div>
+      <h1>Bagian <em>Perjalanan</em><br>Sekretariat Jenderal DPR RI</h1>
+      <p class="hero-desc">Unit kerja di bawah Biro Keuangan yang bertugas melaksanakan administrasi perjalanan dinas dalam negeri dan luar negeri bagi Anggota DPR RI, serta pegawai Sekretariat Jenderal dan Badan Keahlian DPR RI.</p>
+      <div class="hero-actions">
+        <a href="#struktur" class="btn btn-primary"><span>Jelajahi Subbagian</span> <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a>
+        <a href="#faq" class="btn btn-ghost"><span>FAQ Perjalanan Dinas</span></a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="3">0</span></div><div class="hero-stat-label">Subbagian</div></div>
+      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="26">0</span><span>+</span></div><div class="hero-stat-label">Regulasi</div></div>
+      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="6">0</span></div><div class="hero-stat-label">Inovasi Digital</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Gulir</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<section class="section" id="struktur">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">Struktur Organisasi</div>
+      <h2 class="section-title">Subbagian di Bawah Bagian Perjalanan</h2>
+      <p class="section-subtitle">Klik setiap subbagian untuk melihat detail dan mengakses layanan terkait</p>
+    </div>
+    <div class="struktur-grid">
+      <div class="struktur-card reveal" onclick="openModal('modal-dewan')">
+        <div class="struktur-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div>
+        <h3>Subbagian Perjalanan Dinas Dalam Negeri Dewan</h3>
+        <p>Melakukan pengelolaan administrasi perjalanan dinas dalam negeri bagi Anggota DPR RI.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-1" onclick="openModal('modal-setjen')">
+        <div class="struktur-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="19" rx="1.5"></rect><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 22v-4h4v4"></path></svg></div>
+        <h3>Subbagian Perjalanan Dinas Dalam Negeri Setjen</h3>
+        <p>Pengelolaan administrasi perjalanan dinas dalam negeri bagi pegawai Setjen, serta tata usaha Bagian Perjalanan.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-2" onclick="openModal('modal-luar')">
+        <div class="struktur-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path class="icon-accent" d="M3 12h18M5 7h14M5 17h14"></path></svg></div>
+        <h3>Subbagian Perjalanan Dinas Luar Negeri</h3>
+        <p>Pengelolaan administrasi perjalanan dinas luar negeri bagi Anggota DPR RI, pegawai Setjen, dan Badan Keahlian.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section section-alt" id="regulasi">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">Landasan Regulasi</div>
+      <h2 class="section-title">Regulasi Berlaku dan Arsip</h2>
+      <p class="section-subtitle">Klik peraturan untuk membuka sumber resmi. Regulasi aktif, regulasi dengan perubahan, serta dokumen historis/arsip dibedakan secara jelas.<br><small>Status dan sumber terakhir ditinjau: 25 September 2026.</small></p>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon dasar"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21h16M12 3v18M4 7h16M5 7l-3 7h6L5 7Zm14 0-3 7h6l-3-7Z"></path><circle class="icon-accent" cx="12" cy="6" r="2"></circle></svg></div><span>Regulasi Dasar</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/uu-17-tahun-2014" target="_blank" rel="noopener noreferrer" aria-label="Buka UU No. 17 Tahun 2014 tentang MD3 (tab baru)"><div class="regulasi-num">01</div><div class="regulasi-content"><h4>UU No. 17 Tahun 2014 tentang MD3</h4><p>Majelis Permusyawaratan Rakyat, Dewan Perwakilan Rakyat, Dewan Perwakilan Daerah, dan Dewan Perwakilan Rakyat Daerah.</p><span class="regulasi-tag tag-utama">Undang-Undang</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://peraturan.bpk.go.id/Details/63584/pp-no-61-tahun-1990" target="_blank" rel="noopener noreferrer" aria-label="Buka PP No. 61 Tahun 1990 (tab baru)"><div class="regulasi-num">02</div><div class="regulasi-content"><h4>PP No. 61 Tahun 1990</h4><p>Perjalanan Dinas Pimpinan dan Anggota Dewan Perwakilan Rakyat Republik Indonesia.</p><span class="regulasi-tag tag-utama">Peraturan Pemerintah</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://peraturan.bpk.go.id/Details/65299/keppres-no-35-tahun-1984" target="_blank" rel="noopener noreferrer" aria-label="Buka Keppres No. 35 Tahun 1984 (tab baru)"><div class="regulasi-num">03</div><div class="regulasi-content"><h4>Keppres No. 35 Tahun 1984</h4><p>Organisasi Sekretariat Jenderal DPR RI. Arsip historis: dicabut dengan Keppres No. 13 Tahun 1994.</p><span class="regulasi-tag tag-utama">Arsip · Dicabut</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://peraturan.bpk.go.id/Details/132019/perpres-no-26-tahun-2020" target="_blank" rel="noopener noreferrer" aria-label="Buka Perpres No. 26 Tahun 2020 (tab baru)"><div class="regulasi-num">04</div><div class="regulasi-content"><h4>Perpres No. 26 Tahun 2020</h4><p>Sekretariat Jenderal DPR RI. Dibaca bersama perubahan dalam Perpres No. 16 Tahun 2023.</p><span class="regulasi-tag tag-penting">Peraturan Presiden</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://peraturan.bpk.go.id/Details/243688/perpres-no-16-tahun-2023" target="_blank" rel="noopener noreferrer" aria-label="Buka Perpres No. 16 Tahun 2023 (tab baru)"><div class="regulasi-num">05</div><div class="regulasi-content"><h4>Perpres No. 16 Tahun 2023</h4><p>Perubahan atas Perpres No. 26 Tahun 2020 tentang Sekretariat Jenderal DPR RI.</p><span class="regulasi-tag tag-penting">Perubahan</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+      </div>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon operasional"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="m10 3-1 3-3 1-3-1-1 4 3 2v2l-2 2 3 3 3-1 2 1 1 3 4-1 1-3 2-1 3 1 1-4-3-2v-2l2-2-3-3-3 1-2-1-1-3Z"></path></svg></div><span>Regulasi Operasional Setjen DPR RI</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/organisasi-dan-tata-kerja-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 6 Tahun 2021 (tab baru)"><div class="regulasi-num">06</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 6 Tahun 2021</h4><p>Organisasi dan Tata Kerja Sekretariat Jenderal DPR RI. Regulasi induk organisasi yang mencabut Persekjen No. 6 Tahun 2015.</p><span class="regulasi-tag tag-terkini">Berlaku · Regulasi Induk</span><span class="regulasi-source">Buka sumber resmi JDIH DPR RI</span></div></a>
+<a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perubahan-keempat-atas-peraturan-sekretaris-jenderal-dewan-perwakilan-rakyat-republik-indonesia-nomor-6-tahun-2021-tentang-organisasi-dan-tata-kerja-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 6 Tahun 2024 (tab baru)"><div class="regulasi-num">07</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 6 Tahun 2024</h4><p>Perubahan Keempat atas Persekjen DPR RI No. 6 Tahun 2021 tentang Organisasi dan Tata Kerja Sekretariat Jenderal DPR RI.</p><span class="regulasi-tag tag-terkini">Berlaku · Perubahan Keempat</span><span class="regulasi-source">Buka sumber resmi JDIH DPR RI</span></div></a>
+<a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/organisasi-dan-tata-kerja-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 6 Tahun 2015 (tab baru)"><div class="regulasi-num">06</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 6 Tahun 2015</h4><p>Organisasi dan Tata Kerja Setjen dan Badan Keahlian DPR RI. Dokumen arsip; telah dicabut oleh Persekjen No. 6 Tahun 2021.</p><span class="regulasi-tag tag-utama">Arsip · Tidak Berlaku</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perubahan-kedua-atas-peraturan-sekretaris-jenderal-dpr-ri-nomor-6-tahun-2015-tentang-organisasi-dan-tata-kerja-sekretariat-jenderal-dan-badan-keahlian-dpr-ri" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 7 Tahun 2018 (tab baru)"><div class="regulasi-num">07</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 7 Tahun 2018</h4><p>Perubahan kedua atas Persekjen No. 6 Tahun 2015 mengenai organisasi dan tata kerja. Dokumen arsip; tidak berlaku.</p><span class="regulasi-tag tag-utama">Arsip · Tidak Berlaku</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/petunjuk-teknis-pelaksanaan-dan-pertanggungjawaban-perjalanan-dinas-dalam-negeri-bagi-pegawai-di-lingkungan-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 27 Tahun 2017 (tab baru)"><div class="regulasi-num">08</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 27 Tahun 2017</h4><p>Petunjuk teknis perjalanan dinas dalam negeri bagi pegawai Setjen dan Badan Keahlian DPR RI. Dicabut oleh Persekjen No. 1 Tahun 2024.</p><span class="regulasi-tag tag-penting">Arsip · Dicabut</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 1 Tahun 2024 (tab baru)"><div class="regulasi-num">09</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 1 Tahun 2024</h4><p>Perjalanan Dinas Sekretariat Jenderal DPR RI. Mencabut Persekjen No. 27 Tahun 2017.</p><span class="regulasi-tag tag-terkini">Peraturan Sekjen</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/pedoman-penyusunan-standar-operasional-prosedur-administrasi-pemerintahan-di-lingkungan-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka Persekjen DPR RI No. 14 Tahun 2016 (tab baru)"><div class="regulasi-num">10</div><div class="regulasi-content"><h4>Persekjen DPR RI No. 14 Tahun 2016</h4><p>Pedoman Penyusunan Standar Operasional Prosedur Administrasi Pemerintahan di Lingkungan Setjen dan Badan Keahlian DPR RI.</p><span class="regulasi-tag tag-utama">Pedoman SOP</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+      </div>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon keuangan"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M4 6V4l13-2v4M21 12h-7v5h7"></path><circle class="icon-accent" cx="17" cy="14.5" r=".6"></circle></svg></div><span>PMK — Perjalanan Dinas Dalam Negeri</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 113/PMK.05/2012 (tab baru)"><div class="regulasi-num">11</div><div class="regulasi-content"><h4>PMK No. 113/PMK.05/2012</h4><p>Perjalanan Dinas dalam Negeri bagi Pejabat Negara, Pegawai Negeri, dan Pegawai Tidak Tetap. Dibaca bersama PMK No. 119 Tahun 2023.</p><span class="regulasi-tag tag-pmk">PMK</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 119 Tahun 2023 (tab baru)"><div class="regulasi-num">12</div><div class="regulasi-content"><h4>PMK No. 119 Tahun 2023</h4><p>Perubahan atas PMK No. 113/PMK.05/2012 tentang perjalanan dinas dalam negeri.</p><span class="regulasi-tag tag-pmk">Perubahan PMK</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/pmk-49-tahun-2023" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 49 Tahun 2023 (tab baru)"><div class="regulasi-num">13</div><div class="regulasi-content"><h4>PMK No. 49 Tahun 2023</h4><p>Standar Biaya Masukan Tahun Anggaran 2024. Gunakan sesuai tahun anggaran dokumen.</p><span class="regulasi-tag tag-pmk">Arsip · SBM TA 2024</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/pmk-32-tahun-2025" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 32 Tahun 2025 (tab baru)"><div class="regulasi-num">14</div><div class="regulasi-content"><h4>PMK No. 32 Tahun 2025</h4><p>Standar Biaya Masukan Tahun Anggaran 2026. Rincian tarif terdapat dalam lampiran peraturan.</p><span class="regulasi-tag tag-pmk">SBM TA 2026</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+<a class="regulasi-item" href="https://www.jdih.kemenkeu.go.id/dok/pmk-54-tahun-2026" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 54 Tahun 2026 (tab baru)"><div class="regulasi-num">17</div><div class="regulasi-content"><h4>PMK No. 54 Tahun 2026</h4><p>Standar Biaya Masukan. Dicantumkan sebagai ketentuan SBM terbaru; penerapannya perlu dibaca sesuai tahun anggaran dan ketentuan transisinya.</p><span class="regulasi-tag tag-pmk">Ketentuan SBM Terbaru</span><span class="regulasi-source">Buka sumber resmi JDIH Kemenkeu</span></div></a>
+      </div>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon keuangan"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path class="icon-accent" d="M3 12h18M5 7h14M5 17h14"></path></svg></div><span>PMK — Perjalanan Dinas Luar Negeri</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/164-pmk-05-2015" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 164/PMK.05/2015 (tab baru)"><div class="regulasi-num">15</div><div class="regulasi-content"><h4>PMK No. 164/PMK.05/2015</h4><p>Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri. Dibaca bersama PMK No. 227/PMK.05/2016 dan PMK No. 181/PMK.05/2019.</p><span class="regulasi-tag tag-pmk">PMK</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/227-pmk-05-2016" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 227/PMK.05/2016 (tab baru)"><div class="regulasi-num">16</div><div class="regulasi-content"><h4>PMK No. 227/PMK.05/2016</h4><p>Perubahan atas PMK No. 164/PMK.05/2015 tentang Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri.</p><span class="regulasi-tag tag-pmk">Perubahan PMK</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/181-pmk-05-2019" target="_blank" rel="noopener noreferrer" aria-label="Buka PMK No. 181/PMK.05/2019 (tab baru)"><div class="regulasi-num">17</div><div class="regulasi-content"><h4>PMK No. 181/PMK.05/2019</h4><p>Perubahan kedua atas PMK No. 164/PMK.05/2015 tentang Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri.</p><span class="regulasi-tag tag-pmk">Perubahan PMK</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+      </div>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon pdln"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"></rect><rect class="icon-accent" x="9" y="3" width="6" height="4" rx="1"></rect><path d="M8 12h8M8 16h6"></path></svg></div><span>Aturan Surat Persetujuan Perjalanan Dinas Luar Negeri</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://setkab.go.id/mensesneg-terbitkan-surat-edaran-nomor-b-32-m-s-ln-00-12-2024-terkait-kebijakan-lzin-perjalanan-dinas-luar-negeri/" target="_blank" rel="noopener noreferrer" aria-label="Buka Surat Mensesneg No. B-32/M/S/LN.00/12/2024 (tab baru)"><div class="regulasi-num">18</div><div class="regulasi-content"><h4>Surat Mensesneg No. B-32/M/S/LN.00/12/2024</h4><p>Kebijakan Izin Perjalanan Dinas Luar Negeri, 23 Desember 2024. Salinan surat berada dalam lampiran berkas Prosedur PDLN pada situs Universitas Diponegoro.</p><span class="regulasi-tag tag-pdln">Salinan Surat · PDF UNDIP</span><span class="regulasi-source">Buka salinan surat (PDF)</span></div></a>
+        <a class="regulasi-item" href="https://www.setneg.go.id/baca/index/perjalanan_dinas_luar_negeri" target="_blank" rel="noopener noreferrer" aria-label="Buka Surat Persetujuan Perjalanan Dinas Luar Negeri (tab baru)"><div class="regulasi-num">19</div><div class="regulasi-content"><h4>Surat Persetujuan Perjalanan Dinas Luar Negeri</h4><p>Penjelasan mekanisme penanganan administrasi dan surat persetujuan PDLN pada situs Kementerian Sekretariat Negara. Ini panduan layanan, bukan peraturan bernomor.</p><span class="regulasi-tag tag-pdln">Panduan Setneg</span><span class="regulasi-source">Buka panduan Setneg</span></div></a>
+      </div>
+    </div>
+
+    <div class="regulasi-category reveal">
+      <div class="regulasi-category-title"><div class="cat-icon paspor"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"></rect><circle cx="12" cy="10" r="4"></circle><path d="M8 10h8m-4-4c-2 2-2 6 0 8 2-2 2-6 0-8"></path><path class="icon-accent" d="M9 18h6"></path></svg></div><span>Aturan Terkait Paspor</span></div>
+      <div class="regulasi-list">
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/uu-6-tahun-2011" target="_blank" rel="noopener noreferrer" aria-label="Buka UU No. 6 Tahun 2011 tentang Keimigrasian (tab baru)"><div class="regulasi-num">20</div><div class="regulasi-content"><h4>UU No. 6 Tahun 2011 tentang Keimigrasian</h4><p>Keimigrasian. Tautan membuka dokumen UU No. 6 Tahun 2011; baca bersama peraturan perubahannya.</p><span class="regulasi-tag tag-paspor">Undang-Undang</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://jdih.kemenkeu.go.id/dok/pp-31-tahun-2013" target="_blank" rel="noopener noreferrer" aria-label="Buka PP No. 31 Tahun 2013 (tab baru)"><div class="regulasi-num">21</div><div class="regulasi-content"><h4>PP No. 31 Tahun 2013</h4><p>Peraturan Pelaksanaan UU No. 6 Tahun 2011 tentang Keimigrasian. Baca bersama peraturan perubahannya.</p><span class="regulasi-tag tag-paspor">Peraturan Pemerintah</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://peraturan.go.id/id/permenlu-no-13-tahun-2022" target="_blank" rel="noopener noreferrer" aria-label="Buka Permenlu No. 13 Tahun 2022 (tab baru)"><div class="regulasi-num">22</div><div class="regulasi-content"><h4>Permenlu No. 13 Tahun 2022</h4><p>Perubahan atas Permenlu No. 2 Tahun 2019 tentang Paspor Diplomatik dan Paspor Dinas.</p><span class="regulasi-tag tag-paspor">Perubahan Permenlu</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+        <a class="regulasi-item" href="https://kemenimipas.go.id/produk-hukum-mobile/keputusan-menteri-imigrasi-dan-pemasyarakatan-mobile/kepmen-no-m-ip-17-gr-01-01-tahun-2025-tentang-pelaksanaan-perekaman-data-biometrik-untuk-permohonan-paspor-dinas-di-seluruh-kantor-imigrasi" target="_blank" rel="noopener noreferrer" aria-label="Buka Kepmen Imipas No. M.IP-17.GR.01.01 Tahun 2025 (tab baru)"><div class="regulasi-num">23</div><div class="regulasi-content"><h4>Kepmen Imipas No. M.IP-17.GR.01.01 Tahun 2025</h4><p>Pelaksanaan Perekaman Data Biometrik untuk Permohonan Paspor Dinas di Seluruh Kantor Imigrasi.</p><span class="regulasi-tag tag-paspor">Keputusan Menteri</span><span class="regulasi-source">Buka dokumen peraturan</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+      <p class="section-subtitle">Panduan lengkap perjalanan dinas dalam dan luar negeri — klik pertanyaan untuk melihat jawaban</p>
+    </div>
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Siapa yang berwenang menandatangani SPPD?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Surat perjalanan dinas harus ditandatangani oleh pejabat yang berwenang. Untuk mekanisme penerbitan dan kewenangan pejabat, gunakan PMK 113/2012 beserta perubahannya dan ketentuan internal Setjen DPR RI. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a><a href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer">PMK No. 119 Tahun 2023</a><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Apakah boleh perjalanan dinas dilakukan tanpa SPPD?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Pastikan surat tugas dan dokumen perjalanan dinas sudah diproses sesuai ketentuan sebelum keberangkatan. Persyaratan administrasi dan pertanggungjawaban mengacu pada PMK 113/2012 beserta perubahannya. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a><a href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer">PMK No. 119 Tahun 2023</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Kapan batas waktu pengajuan SPPD?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Ajukan dokumen sebelum keberangkatan sesuai ketentuan internal yang berlaku. Konfirmasikan tenggat operasional pengajuan kepada Bagian Perjalanan sebelum menyiapkan dokumen. <div class="faq-sources"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Kapan batas waktu pertanggungjawaban?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Batas waktu dan kelengkapan pertanggungjawaban mengikuti peraturan perjalanan dinas yang berlaku untuk pelaksana perjalanan. Periksa ketentuan dalam PMK 113/2012 beserta perubahannya dan Persekjen 1/2024. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a><a href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer">PMK No. 119 Tahun 2023</a><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Apa saja komponen biaya perjalanan dinas dalam negeri?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Jenis biaya dan syarat pembebanannya mengacu pada PMK 113/2012 beserta perubahannya. Untuk besaran biaya tahun anggaran 2026, periksa lampiran PMK 32/2025 sesuai kategori perjalanan dan pelaksana tugas. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a><a href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer">PMK No. 119 Tahun 2023</a><a href="https://jdih.kemenkeu.go.id/dok/pmk-32-tahun-2025" target="_blank" rel="noopener noreferrer">PMK No. 32 Tahun 2025</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-dn">Dalam Negeri</span> Berapa lama perjalanan dinas dalam negeri dapat dilaksanakan?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Durasi perjalanan harus sesuai kebutuhan penugasan dan dokumen perjalanan. Periksa ketentuan perjalanan dinas dalam negeri serta ketentuan internal Setjen DPR RI. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa saja dokumen administrasi perjalanan dinas luar negeri?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Persiapkan dokumen penugasan, persetujuan perjalanan, serta dokumen perjalanan dan visa sesuai persyaratan yang berlaku. Panduan Setneg menjelaskan administrasi permohonan persetujuan PDLN. <div class="faq-sources"><a href="https://www.setneg.go.id/baca/index/perjalanan_dinas_luar_negeri" target="_blank" rel="noopener noreferrer">Surat Persetujuan Perjalanan Dinas Luar Negeri</a><a href="https://peraturan.go.id/id/permenlu-no-13-tahun-2022" target="_blank" rel="noopener noreferrer">Permenlu No. 13 Tahun 2022</a><a href="https://peraturan.go.id/id/permenlu-no-2-tahun-2019" target="_blank" rel="noopener noreferrer">Permenlu No. 2 Tahun 2019</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Siapa yang berwenang memberikan izin PDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Kebijakan izin PDLN tercantum dalam Surat Mensesneg B-32/M/S/LN.00/12/2024. Baca surat tersebut dan ikuti prosedur persetujuan yang berlaku pada instansi pengusul. <div class="faq-sources"><a href="https://setkab.go.id/mensesneg-terbitkan-surat-edaran-nomor-b-32-m-s-ln-00-12-2024-terkait-kebijakan-lzin-perjalanan-dinas-luar-negeri/" target="_blank" rel="noopener noreferrer">Surat Mensesneg No. B-32/M/S/LN.00/12/2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa itu Surat Persetujuan Perjalanan Dinas Luar Negeri?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Surat Persetujuan merupakan dokumen persetujuan pelaksanaan perjalanan dinas luar negeri. Mekanisme penerbitan serta informasi yang dicantumkan dijelaskan pada panduan Kementerian Sekretariat Negara. <div class="faq-sources"><a href="https://www.setneg.go.id/baca/index/perjalanan_dinas_luar_negeri" target="_blank" rel="noopener noreferrer">Surat Persetujuan Perjalanan Dinas Luar Negeri</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa isi surat permohonan persetujuan PDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Permohonan memuat identitas pelaksana, tujuan kegiatan, negara atau kota tujuan, waktu perjalanan, serta sumber pembiayaan. Kelengkapan pendukung menyesuaikan kegiatan dan ketentuan instansi yang memproses permohonan. <div class="faq-sources"><a href="https://www.setneg.go.id/baca/index/perjalanan_dinas_luar_negeri" target="_blank" rel="noopener noreferrer">Surat Persetujuan Perjalanan Dinas Luar Negeri</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Berapa lama jangka waktu PDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Gunakan jangka waktu yang disetujui dalam dokumen penugasan dan persetujuan perjalanan. Perhitungan biaya mengikuti ketentuan PDLN dan perubahannya sesuai jenis kegiatan serta durasi yang disetujui. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/164-pmk-05-2015" target="_blank" rel="noopener noreferrer">PMK No. 164/PMK.05/2015</a><a href="https://jdih.kemenkeu.go.id/dok/227-pmk-05-2016" target="_blank" rel="noopener noreferrer">PMK No. 227/PMK.05/2016</a><a href="https://jdih.kemenkeu.go.id/dok/181-pmk-05-2019" target="_blank" rel="noopener noreferrer">PMK No. 181/PMK.05/2019</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Berapa jumlah maksimal peserta PDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Jumlah peserta perlu disesuaikan dengan jenis kegiatan dan kebijakan izin PDLN. Rincian kebijakan dalam Surat Mensesneg B-32/M/S/LN.00/12/2024 tersedia pada salinan surat yang ditautkan. <div class="faq-sources"><a href="https://setkab.go.id/mensesneg-terbitkan-surat-edaran-nomor-b-32-m-s-ln-00-12-2024-terkait-kebijakan-lzin-perjalanan-dinas-luar-negeri/" target="_blank" rel="noopener noreferrer">Surat Mensesneg No. B-32/M/S/LN.00/12/2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa perbedaan Paspor Dinas dan Paspor Biasa?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Paspor dinas merupakan dokumen perjalanan untuk keperluan kedinasan bagi pihak yang memenuhi persyaratan. Ketentuan paspor diplomatik dan paspor dinas diatur dalam Permenlu 2/2019 beserta perubahan melalui Permenlu 13/2022. <div class="faq-sources"><a href="https://peraturan.go.id/id/permenlu-no-13-tahun-2022" target="_blank" rel="noopener noreferrer">Permenlu No. 13 Tahun 2022</a><a href="https://peraturan.go.id/id/permenlu-no-2-tahun-2019" target="_blank" rel="noopener noreferrer">Permenlu No. 2 Tahun 2019</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa itu Exit Permit dan apakah wajib?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Persyaratan izin keberangkatan perlu diperiksa sesuai jenis paspor dan penugasannya. Gunakan ketentuan paspor diplomatik dan paspor dinas serta arahan instansi penerbit dokumen. Konfirmasikan kelengkapan izin sebelum keberangkatan kepada pengelola perjalanan. <div class="faq-sources"><a href="https://peraturan.go.id/id/permenlu-no-13-tahun-2022" target="_blank" rel="noopener noreferrer">Permenlu No. 13 Tahun 2022</a><a href="https://peraturan.go.id/id/permenlu-no-2-tahun-2019" target="_blank" rel="noopener noreferrer">Permenlu No. 2 Tahun 2019</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Berapa lama proses penerbitan Paspor Dinas?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Konfirmasikan waktu layanan kepada unit yang memproses permohonan setelah dokumen lengkap. Kepmen Imipas M.IP-17.GR.01.01 Tahun 2025 yang ditautkan mengatur perekaman biometrik paspor dinas, bukan jaminan lama penerbitan paspor. <div class="faq-sources"><a href="https://kemenimipas.go.id/produk-hukum-mobile/keputusan-menteri-imigrasi-dan-pemasyarakatan-mobile/kepmen-no-m-ip-17-gr-01-01-tahun-2025-tentang-pelaksanaan-perekaman-data-biometrik-untuk-permohonan-paspor-dinas-di-seluruh-kantor-imigrasi" target="_blank" rel="noopener noreferrer">Kepmen Imipas No. M.IP-17.GR.01.01 Tahun 2025</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa saja komponen biaya PDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Rincian biaya PDLN mengikuti PMK 164/2015 beserta perubahan dalam PMK 227/2016 dan PMK 181/2019. Untuk ketentuan internal Setjen DPR RI, baca pula Persekjen 1/2024. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/164-pmk-05-2015" target="_blank" rel="noopener noreferrer">PMK No. 164/PMK.05/2015</a><a href="https://jdih.kemenkeu.go.id/dok/227-pmk-05-2016" target="_blank" rel="noopener noreferrer">PMK No. 227/PMK.05/2016</a><a href="https://jdih.kemenkeu.go.id/dok/181-pmk-05-2019" target="_blank" rel="noopener noreferrer">PMK No. 181/PMK.05/2019</a><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Bagaimana jika PDLN dibatalkan?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Dokumentasikan alasan pembatalan dan bukti pengeluaran, lalu ajukan pemeriksaan kepada pengelola perjalanan. Ketentuan biaya yang dapat dipertanggungjawabkan mengikuti aturan PDLN beserta perubahannya. <div class="faq-sources"><a href="https://jdih.kemenkeu.go.id/dok/164-pmk-05-2015" target="_blank" rel="noopener noreferrer">PMK No. 164/PMK.05/2015</a><a href="https://jdih.kemenkeu.go.id/dok/181-pmk-05-2019" target="_blank" rel="noopener noreferrer">PMK No. 181/PMK.05/2019</a></div></div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-question" aria-expanded="false" onclick="toggleFaq(this.closest('.faq-item'))"><span><span class="faq-badge badge-ln">Luar Negeri</span> Apa itu SIPDLN?</span><span class="faq-icon" aria-hidden="true"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">SIPDLN merupakan sistem yang digunakan dalam proses administrasi izin perjalanan dinas luar negeri. Kebijakan izin PDLN dapat dibaca pada Surat Mensesneg B-32/M/S/LN.00/12/2024. <div class="faq-sources"><a href="https://setkab.go.id/mensesneg-terbitkan-surat-edaran-nomor-b-32-m-s-ln-00-12-2024-terkait-kebijakan-lzin-perjalanan-dinas-luar-negeri/" target="_blank" rel="noopener noreferrer">Surat Mensesneg No. B-32/M/S/LN.00/12/2024</a></div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INOVASI DIGITAL -->
+<section class="section section-alt" id="digital">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">Transformasi Digital</div>
+      <h2 class="section-title">Inovasi Pelayanan</h2>
+      <p class="section-subtitle">Klik setiap inovasi untuk melihat detail dan mengakses aplikasi terkait</p>
+    </div>
+    <div class="bento">
+      <div class="bento-card bento-accent bento-wide reveal" onclick="openModal('inova-integrasi')">
+        <div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="16" y="16" width="6" height="6" rx="1"></rect><path class="icon-accent" d="M12 8v4H5v4m7-4h7v4"></path></svg></div>
+        <h3>Integrasi Sistem Perjalanan Dinas (2026)</h3>
+        <p>Integrasi tiga aplikasi utama: <strong>Aladin + Sitangguh + Pandora</strong> — satu ekosistem digital untuk seluruh proses perjalanan dinas. Tujuan: efektif, efisien, dan akuntabel.</p>
+        <div class="bento-meta">Sosialisasi <strong>2 Februari 2026</strong></div>
+        <span class="bento-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="bento-card bento-narrow reveal reveal-delay-1" onclick="openModal('inova-simerpati')">
+        <div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 5h4M11 19h2"></path><path class="icon-accent" d="m9 12 2 2 4-4"></path></svg></div>
+        <h3>SiMerpati</h3>
+        <p>Sistem Informasi Perjalanan Anggota dan Tenaga Ahli — dokumen cukup satu lembar, proses real-time tanpa datang ke loket.</p>
+        <div class="bento-meta">Diluncurkan <strong>November 2024</strong></div>
+        <span class="bento-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="bento-card bento-third reveal" onclick="openModal('inova-pandora')">
+        <div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 7 2 6-8c1-2 4-2 4 0l-5 10 5 5-2 2-6-4-5 4-2-1 3-6-6-2 1-2Z"></path></svg></div>
+        <h3>Pandora</h3>
+        <p>Perjalanan Dinas Online Mandiri Responsif dan Akuntabel — pengajuan daring tanpa antre fisik.</p>
+        <div class="bento-meta">Launching <strong>19 November 2025</strong></div>
+        <span class="bento-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="bento-card bento-third reveal reveal-delay-1" onclick="openModal('inova-perjadin')">
+        <div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8M8 16h6"></path></svg></div>
+        <h3>Aplikasi Perjalanan Dinas</h3>
+        <p>Sistem informasi resmi pengajuan perjalanan dinas Setjen DPR RI — proses pengajuan Surat Perintah Perjalanan Dinas (SPPD) secara daring, cepat, dan transparan.</p>
+        <div class="bento-meta">Akses <strong>perjadin.dpr.go.id</strong></div>
+        <span class="bento-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="bento-card bento-third reveal reveal-delay-2" onclick="openModal('inova-pertanggungjawaban')">
+        <div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M4 6V4l13-2v4M21 12h-7v5h7"></path><circle class="icon-accent" cx="17" cy="14.5" r=".6"></circle></svg></div>
+        <h3>Pertanggungjawaban Perjalanan Dinas</h3>
+        <p>Sistem pertanggungjawaban biaya perjalanan dinas terintegrasi — proses pelaporan, verifikasi, dan penyelesaian administrasi keuangan secara digital.</p>
+        <div class="bento-meta">Akses <strong>digitall.dpr.go.id</strong></div>
+        <span class="bento-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <a class="bento-card bento-half reveal" href="https://emedia.dpr.go.id/" target="_blank" rel="noopener noreferrer"><div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="16" height="18" rx="2"></rect><path d="M19 7h3v12a2 2 0 0 1-2 2M7 7h8M7 11h3v4H7zM13 11h2m-2 4h2M7 18h8"></path></svg></div><h3>Berita DPR RI</h3><p>Ikuti berita kegiatan DPR RI melalui eMedia. Redaksi memperbarui berita di portal sumber sehingga Anda tidak perlu mengubah kode halaman ini.</p><div class="bento-meta">Sumber <strong>eMedia DPR RI</strong></div><span class="bento-link">Buka berita terkini <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3h7v7m0-7L10 14M10 3H4v17h17v-6"></path></svg></span></a>
+      <a class="bento-card bento-half reveal" href="https://www.dpr.go.id/" target="_blank" rel="noopener noreferrer"><div class="bento-card-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div><h3>Website Resmi DPR RI</h3><p>Akses informasi kelembagaan, agenda, dan publikasi Dewan Perwakilan Rakyat Republik Indonesia.</p><div class="bento-meta">Portal <strong>www.dpr.go.id</strong></div><span class="bento-link">Kunjungi website DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3h7v7m0-7L10 14M10 3H4v17h17v-6"></path></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- MODALS — SUBBAGIAN -->
+<div class="modal-overlay" id="modal-dewan"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-dewan')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div><span class="modal-tag">Subbagian</span><h3>Subbagian Perjalanan Dinas Dalam Negeri Dewan</h3><p>Bertugas melakukan pengelolaan administrasi perjalanan dinas dalam negeri bagi <strong>Anggota DPR RI</strong>. Meliputi penyusunan rencana perjalanan, pengajuan SPPD, pengurusan tiket dan akomodasi, hingga pertanggungjawaban biaya perjalanan dinas.</p><p>Seluruh proses kini terintegrasi melalui aplikasi <strong>SiMerpati</strong> dan <strong>Aplikasi Perjalanan Dinas</strong>, memungkinkan Anggota DPR dan Tenaga Ahli memantau proses perjalanan dinas secara real-time.</p><div class="modal-actions"><a href="https://www.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Portal DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a><a href="https://jdih.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-outline">JDIH Setjen DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<div class="modal-overlay" id="modal-setjen"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-setjen')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="19" rx="1.5"></rect><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 22v-4h4v4"></path></svg></div><span class="modal-tag">Subbagian</span><h3>Subbagian Perjalanan Dinas Dalam Negeri Setjen</h3><p>Bertugas melakukan pengelolaan administrasi perjalanan dinas dalam negeri bagi <strong>pegawai Setjen DPR RI</strong>, serta pelaksanaan tata usaha Bagian Perjalanan.</p><p>Akses publikasi dan informasi kegiatan melalui repositori serta portal eMedia DPR RI.</p><div class="modal-actions"><a href="https://repositori.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Repositori DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a><a href="https://emedia.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-outline">eMedia DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<div class="modal-overlay" id="modal-luar"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-luar')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path class="icon-accent" d="M3 12h18M5 7h14M5 17h14"></path></svg></div><span class="modal-tag">Subbagian</span><h3>Subbagian Perjalanan Dinas Luar Negeri</h3><p>Bertugas melakukan pengelolaan administrasi perjalanan dinas luar negeri bagi <strong>Anggota DPR RI, pegawai Setjen, dan Badan Keahlian</strong>.</p><p>Mengacu pada <strong>PMK No. 164/PMK.05/2015</strong> jo. <strong>PMK No. 227/PMK.05/2016</strong> jo. <strong>PMK No. 181/PMK.05/2019</strong>, serta <strong>Persekjen No. 1 Tahun 2024</strong>. Dokumen wajib: Surat Persetujuan PDLN, Paspor Dinas, Exit Permit, dan Visa.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-primary">JDIH Kemenkeu <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a><a href="https://ktln.setneg.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-outline">KTLN Setneg <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<!-- MODALS — REGULASI -->
+<div class="modal-overlay" id="reg-uu17"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-uu17')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon">⚖️</div><span class="modal-tag">Undang-Undang</span><h3>UU No. 17 Tahun 2014 tentang MD3</h3><p>Majelis Permusyawaratan Rakyat, Dewan Perwakilan Rakyat, Dewan Perwakilan Daerah, dan Dewan Perwakilan Rakyat Daerah.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/uu-17-tahun-2014" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka UU No. 17 Tahun 2014 tentang MD3</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pp61"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pp61')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21h16M12 3v18M4 7h16M5 7l-3 7h6L5 7Zm14 0-3 7h6l-3-7Z"></path><circle class="icon-accent" cx="12" cy="6" r="2"></circle></svg></div><span class="modal-tag">Peraturan Pemerintah</span><h3>PP No. 61 Tahun 1990</h3><p>Perjalanan Dinas Pimpinan dan Anggota Dewan Perwakilan Rakyat Republik Indonesia.</p><div class="modal-actions"><a href="https://peraturan.bpk.go.id/Details/63584/pp-no-61-tahun-1990" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PP No. 61 Tahun 1990</a></div></div></div>
+
+<div class="modal-overlay" id="reg-keppres35"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-keppres35')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div><span class="modal-tag">Arsip · Dicabut</span><h3>Keppres No. 35 Tahun 1984</h3><p>Organisasi Sekretariat Jenderal DPR RI. Arsip historis: dicabut dengan Keppres No. 13 Tahun 1994.</p><div class="modal-actions"><a href="https://peraturan.bpk.go.id/Details/65299/keppres-no-35-tahun-1984" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Keppres No. 35 Tahun 1984</a></div></div></div>
+
+<div class="modal-overlay" id="reg-perpres26"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-perpres26')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"></rect><rect class="icon-accent" x="9" y="3" width="6" height="4" rx="1"></rect><path d="M8 12h8M8 16h6"></path></svg></div><span class="modal-tag">Peraturan Presiden</span><h3>Perpres No. 26 Tahun 2020</h3><p>Sekretariat Jenderal DPR RI. Dibaca bersama perubahan dalam Perpres No. 16 Tahun 2023.</p><div class="modal-actions"><a href="https://peraturan.bpk.go.id/Details/132019/perpres-no-26-tahun-2020" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Perpres No. 26 Tahun 2020</a></div></div></div>
+
+<div class="modal-overlay" id="reg-perpres16"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-perpres16')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8M8 16h6"></path></svg></div><span class="modal-tag">Perubahan</span><h3>Perpres No. 16 Tahun 2023</h3><p>Perubahan atas Perpres No. 26 Tahun 2020 tentang Sekretariat Jenderal DPR RI.</p><div class="modal-actions"><a href="https://peraturan.bpk.go.id/Details/243688/perpres-no-16-tahun-2023" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Perpres No. 16 Tahun 2023</a></div></div></div>
+
+<div class="modal-overlay" id="reg-persekjen6"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-persekjen6')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="m10 3-1 3-3 1-3-1-1 4 3 2v2l-2 2 3 3 3-1 2 1 1 3 4-1 1-3 2-1 3 1 1-4-3-2v-2l2-2-3-3-3 1-2-1-1-3Z"></path></svg></div><span class="modal-tag">Arsip · Tidak Berlaku</span><h3>Persekjen DPR RI No. 6 Tahun 2015</h3><p>Organisasi dan Tata Kerja Setjen dan Badan Keahlian DPR RI. Dokumen arsip; telah dicabut oleh Persekjen No. 6 Tahun 2021.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/organisasi-dan-tata-kerja-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Persekjen DPR RI No. 6 Tahun 2015</a></div></div></div>
+
+<div class="modal-overlay" id="reg-persekjen7"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-persekjen7')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5M4 16a8 8 0 0 0 14 3l3-3m0 5v-5h-5"></path></svg></div><span class="modal-tag">Arsip · Tidak Berlaku</span><h3>Persekjen DPR RI No. 7 Tahun 2018</h3><p>Perubahan kedua atas Persekjen No. 6 Tahun 2015 mengenai organisasi dan tata kerja. Dokumen arsip; tidak berlaku.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perubahan-kedua-atas-peraturan-sekretaris-jenderal-dpr-ri-nomor-6-tahun-2015-tentang-organisasi-dan-tata-kerja-sekretariat-jenderal-dan-badan-keahlian-dpr-ri" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Persekjen DPR RI No. 7 Tahun 2018</a></div></div></div>
+
+<div class="modal-overlay" id="reg-persekjen27"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-persekjen27')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8M8 16h6"></path></svg></div><span class="modal-tag">Arsip · Dicabut</span><h3>Persekjen DPR RI No. 27 Tahun 2017</h3><p>Petunjuk teknis perjalanan dinas dalam negeri bagi pegawai Setjen dan Badan Keahlian DPR RI. Dicabut oleh Persekjen No. 1 Tahun 2024.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/petunjuk-teknis-pelaksanaan-dan-pertanggungjawaban-perjalanan-dinas-dalam-negeri-bagi-pegawai-di-lingkungan-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Persekjen DPR RI No. 27 Tahun 2017</a></div></div></div>
+
+<div class="modal-overlay" id="reg-persekjen1"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-persekjen1')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21h16M12 3v18M4 7h16M5 7l-3 7h6L5 7Zm14 0-3 7h6l-3-7Z"></path><circle class="icon-accent" cx="12" cy="6" r="2"></circle></svg></div><span class="modal-tag">Peraturan Sekjen</span><h3>Persekjen DPR RI No. 1 Tahun 2024</h3><p>Perjalanan Dinas Sekretariat Jenderal DPR RI. Mencabut Persekjen No. 27 Tahun 2017.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Persekjen DPR RI No. 1 Tahun 2024</a></div></div></div>
+
+<div class="modal-overlay" id="reg-sop2012"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-sop2012')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"></rect><rect class="icon-accent" x="9" y="3" width="6" height="4" rx="1"></rect><path d="M8 12h8M8 16h6"></path></svg></div><span class="modal-tag">Pedoman SOP</span><h3>Persekjen DPR RI No. 14 Tahun 2016</h3><p>Pedoman Penyusunan Standar Operasional Prosedur Administrasi Pemerintahan di Lingkungan Setjen dan Badan Keahlian DPR RI.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/pedoman-penyusunan-standar-operasional-prosedur-administrasi-pemerintahan-di-lingkungan-sekretariat-jenderal-dan-badan-keahlian-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Persekjen DPR RI No. 14 Tahun 2016</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk113"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk113')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M4 6V4l13-2v4M21 12h-7v5h7"></path><circle class="icon-accent" cx="17" cy="14.5" r=".6"></circle></svg></div><span class="modal-tag">PMK</span><h3>PMK No. 113/PMK.05/2012</h3><p>Perjalanan Dinas dalam Negeri bagi Pejabat Negara, Pegawai Negeri, dan Pegawai Tidak Tetap. Dibaca bersama PMK No. 119 Tahun 2023.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 113/PMK.05/2012</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk119"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk119')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 3v18h17M8 17v-5m5 5V8m5 9V5"></path><path class="icon-accent" d="m7 7 5-3 5-1"></path></svg></div><span class="modal-tag">Perubahan PMK</span><h3>PMK No. 119 Tahun 2023</h3><p>Perubahan atas PMK No. 113/PMK.05/2012 tentang perjalanan dinas dalam negeri.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/pmk-119-tahun-2023" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 119 Tahun 2023</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk49"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk49')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M4 6V4l13-2v4M21 12h-7v5h7"></path><circle class="icon-accent" cx="17" cy="14.5" r=".6"></circle></svg></div><span class="modal-tag">SBM TA 2024</span><h3>PMK No. 49 Tahun 2023</h3><p>Standar Biaya Masukan Tahun Anggaran 2024. Gunakan sesuai tahun anggaran dokumen.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/pmk-49-tahun-2023" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 49 Tahun 2023</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk32"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk32')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 3v18h17M8 17v-5m5 5V8m5 9V5"></path><path class="icon-accent" d="m7 7 5-3 5-1"></path></svg></div><span class="modal-tag">SBM TA 2026</span><h3>PMK No. 32 Tahun 2025</h3><p>Standar Biaya Masukan Tahun Anggaran 2026. Rincian tarif terdapat dalam lampiran peraturan.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/pmk-32-tahun-2025" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 32 Tahun 2025</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk164"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk164')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><ellipse cx="12" cy="12" rx="4" ry="9"></ellipse><path class="icon-accent" d="M3 12h18M5 7h14M5 17h14"></path></svg></div><span class="modal-tag">PMK</span><h3>PMK No. 164/PMK.05/2015</h3><p>Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri. Dibaca bersama PMK No. 227/PMK.05/2016 dan PMK No. 181/PMK.05/2019.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/164-pmk-05-2015" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 164/PMK.05/2015</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk227"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk227')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5M4 16a8 8 0 0 0 14 3l3-3m0 5v-5h-5"></path></svg></div><span class="modal-tag">Perubahan PMK</span><h3>PMK No. 227/PMK.05/2016</h3><p>Perubahan atas PMK No. 164/PMK.05/2015 tentang Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/227-pmk-05-2016" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 227/PMK.05/2016</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pmk181"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pmk181')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"></rect><rect class="icon-accent" x="9" y="3" width="6" height="4" rx="1"></rect><path d="M8 12h8M8 16h6"></path></svg></div><span class="modal-tag">Perubahan PMK</span><h3>PMK No. 181/PMK.05/2019</h3><p>Perubahan kedua atas PMK No. 164/PMK.05/2015 tentang Tata Cara Pelaksanaan Perjalanan Dinas Luar Negeri.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/181-pmk-05-2019" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PMK No. 181/PMK.05/2019</a></div></div></div>
+
+<div class="modal-overlay" id="reg-se-mensesneg"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-se-mensesneg')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10v6h4l11 4V6L8 10H4Zm4 6 2 6h4l-2-5M19 10h2v6h-2"></path></svg></div><span class="modal-tag">Salinan Surat · PDF UNDIP</span><h3>Surat Mensesneg No. B-32/M/S/LN.00/12/2024</h3><p>Kebijakan Izin Perjalanan Dinas Luar Negeri, 23 Desember 2024. Salinan surat berada dalam lampiran berkas Prosedur PDLN pada situs Universitas Diponegoro.</p><div class="modal-actions"><a href="https://setkab.go.id/mensesneg-terbitkan-surat-edaran-nomor-b-32-m-s-ln-00-12-2024-terkait-kebijakan-lzin-perjalanan-dinas-luar-negeri/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Surat Mensesneg No. B-32/M/S/LN.00/12/2024</a></div></div></div>
+
+<div class="modal-overlay" id="reg-persetujuan-ln"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-persetujuan-ln')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3Z"></path><path class="icon-accent" d="m8 12 3 3 5-6"></path></svg></div><span class="modal-tag">Panduan Setneg</span><h3>Surat Persetujuan Perjalanan Dinas Luar Negeri</h3><p>Penjelasan mekanisme penanganan administrasi dan surat persetujuan PDLN pada situs Kementerian Sekretariat Negara. Ini panduan layanan, bukan peraturan bernomor.</p><div class="modal-actions"><a href="https://www.setneg.go.id/baca/index/perjalanan_dinas_luar_negeri" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Surat Persetujuan Perjalanan Dinas Luar Negeri</a></div></div></div>
+
+<div class="modal-overlay" id="reg-uu6"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-uu6')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"></rect><circle cx="12" cy="10" r="4"></circle><path d="M8 10h8m-4-4c-2 2-2 6 0 8 2-2 2-6 0-8"></path><path class="icon-accent" d="M9 18h6"></path></svg></div><span class="modal-tag">Undang-Undang</span><h3>UU No. 6 Tahun 2011 tentang Keimigrasian</h3><p>Keimigrasian. Tautan membuka dokumen UU No. 6 Tahun 2011; baca bersama peraturan perubahannya.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/uu-6-tahun-2011" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka UU No. 6 Tahun 2011 tentang Keimigrasian</a></div></div></div>
+
+<div class="modal-overlay" id="reg-pp31"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-pp31')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21h16M12 3v18M4 7h16M5 7l-3 7h6L5 7Zm14 0-3 7h6l-3-7Z"></path><circle class="icon-accent" cx="12" cy="6" r="2"></circle></svg></div><span class="modal-tag">Peraturan Pemerintah</span><h3>PP No. 31 Tahun 2013</h3><p>Peraturan Pelaksanaan UU No. 6 Tahun 2011 tentang Keimigrasian. Baca bersama peraturan perubahannya.</p><div class="modal-actions"><a href="https://jdih.kemenkeu.go.id/dok/pp-31-tahun-2013" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka PP No. 31 Tahun 2013</a></div></div></div>
+
+<div class="modal-overlay" id="reg-permenlu"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-permenlu')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"></rect><circle cx="12" cy="10" r="4"></circle><path d="M8 10h8m-4-4c-2 2-2 6 0 8 2-2 2-6 0-8"></path><path class="icon-accent" d="M9 18h6"></path></svg></div><span class="modal-tag">Perubahan Permenlu</span><h3>Permenlu No. 13 Tahun 2022</h3><p>Perubahan atas Permenlu No. 2 Tahun 2019 tentang Paspor Diplomatik dan Paspor Dinas.</p><div class="modal-actions"><a href="https://peraturan.go.id/id/permenlu-no-13-tahun-2022" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Permenlu No. 13 Tahun 2022</a></div></div></div>
+
+<div class="modal-overlay" id="reg-paspor-dinas"><div class="modal-box"><button class="modal-close" onclick="closeModal('reg-paspor-dinas')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"></rect><circle cx="12" cy="10" r="4"></circle><path d="M8 10h8m-4-4c-2 2-2 6 0 8 2-2 2-6 0-8"></path><path class="icon-accent" d="M9 18h6"></path></svg></div><span class="modal-tag">Keputusan Menteri</span><h3>Kepmen Imipas No. M.IP-17.GR.01.01 Tahun 2025</h3><p>Pelaksanaan Perekaman Data Biometrik untuk Permohonan Paspor Dinas di Seluruh Kantor Imigrasi.</p><div class="modal-actions"><a href="https://kemenimipas.go.id/produk-hukum-mobile/keputusan-menteri-imigrasi-dan-pemasyarakatan-mobile/kepmen-no-m-ip-17-gr-01-01-tahun-2025-tentang-pelaksanaan-perekaman-data-biometrik-untuk-permohonan-paspor-dinas-di-seluruh-kantor-imigrasi" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Kepmen Imipas No. M.IP-17.GR.01.01 Tahun 2025</a></div></div></div>
+
+<!-- MODALS — INOVASI -->
+<div class="modal-overlay" id="inova-integrasi"><div class="modal-box"><button class="modal-close" onclick="closeModal('inova-integrasi')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="16" y="16" width="6" height="6" rx="1"></rect><path class="icon-accent" d="M12 8v4H5v4m7-4h7v4"></path></svg></div><span class="modal-tag">Inovasi 2026</span><h3>Integrasi Sistem Perjalanan Dinas</h3><p>Sosialisasi Aplikasi Perjalanan Dinas Terintegrasi pada <strong>2 Februari 2026</strong> di Gedung Nusantara. Integrasi: <strong>Aladin + Sitangguh + Pandora</strong>.</p><p>Kepala Biro Keuangan Setjen DPR RI, Indra Pahlevi: <em>"Dengan sistem yang terintegrasi ini kita harapkan semua proses itu menjadi jauh lebih cepat... tujuan utamanya adalah efektif, efisien dan akuntabel."</em></p><div class="modal-actions"><a href="https://emedia.dpr.go.id/news/2026/02/03/menuju-parlemen-modern-setjen-dpr-ri-integrasikan-sistem-perjalanan-dinas" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Baca Berita Lengkap <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<div class="modal-overlay" id="inova-simerpati"><div class="modal-box"><button class="modal-close" onclick="closeModal('inova-simerpati')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 5h4M11 19h2"></path><path class="icon-accent" d="m9 12 2 2 4-4"></path></svg></div><span class="modal-tag">Inovasi 2024</span><h3>SiMerpati</h3><p>Platform digital untuk mempermudah administrasi perjalanan dinas bagi <strong>Anggota DPR, Tenaga Ahli, Staf Ahli</strong>. Dokumen cukup satu lembar, proses real-time tanpa datang ke loket.</p><div class="modal-actions"><a href="https://emedia.dpr.go.id/news/2024/11/29/aplikasi-simerpati-langkah-inovatif-tingkatkan-efisiensi-sistem-perjalanan-dinas-dpr-ri" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Baca Berita <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<div class="modal-overlay" id="inova-pandora"><div class="modal-box"><button class="modal-close" onclick="closeModal('inova-pandora')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 7 2 6-8c1-2 4-2 4 0l-5 10 5 5-2 2-6-4-5 4-2-1 3-6-6-2 1-2Z"></path></svg></div><span class="modal-tag">Inovasi 2025</span><h3>Pandora</h3><p>Diluncurkan <strong>19 November 2025</strong>. Seluruh pengajuan perjalanan dinas dapat dilakukan daring tanpa antre fisik. Terintegrasi dengan Aladin dan Sitangguh.</p><div class="modal-actions"><a href="https://jdih.dpr.go.id/berita/detail/id/61090" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Baca Berita <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
+
+<!-- Modal Aplikasi Perjalanan Dinas (BARU) -->
+<div class="modal-overlay" id="inova-perjadin">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('inova-perjadin')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button>
+    <div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8M8 16h6"></path></svg></div>
+    <span class="modal-tag">Aplikasi Resmi</span>
+    <h3>Aplikasi Perjalanan Dinas</h3>
+    <p>Aplikasi Perjalanan Dinas adalah sistem informasi resmi Sekretariat Jenderal DPR RI untuk pengajuan <strong>Surat Perintah Perjalanan Dinas (SPPD)</strong> bagi Anggota DPR RI, pegawai Setjen, dan Badan Keahlian DPR RI.</p>
+    <p>Melalui aplikasi ini, seluruh proses pengajuan perjalanan dinas dapat dilakukan secara <strong>daring</strong>, <strong>cepat</strong>, dan <strong>transparan</strong> — mulai dari pengisian data perjalanan, pemilihan moda transportasi, hingga penerbitan SPPD digital. Aplikasi ini menggantikan proses manual berbasis kertas yang memakan waktu dan rentan kesalahan.</p>
+    <p><strong>Fitur utama:</strong></p>
+    <p style="margin-left: 1rem;">• Pengajuan SPPD secara daring tanpa antre loket<br>
+       • Pelacakan status pengajuan secara real-time<br>
+       • Riwayat perjalanan dinas tersimpan digital<br>
+       • Integrasi dengan sistem keuangan dan pertanggungjawaban</p>
+    <div class="modal-actions">
+      <a href="https://perjadin.dpr.go.id/admin/index" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Aplikasi Perjalanan Dinas <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Pertanggungjawaban Perjalanan Dinas (BARU) -->
+<div class="modal-overlay" id="inova-pertanggungjawaban">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('inova-pertanggungjawaban')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button>
+    <div class="modal-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M4 6V4l13-2v4M21 12h-7v5h7"></path><circle class="icon-accent" cx="17" cy="14.5" r=".6"></circle></svg></div>
+    <span class="modal-tag">Sistem Terintegrasi</span>
+    <h3>Pertanggungjawaban Perjalanan Dinas</h3>
+    <p>Sistem <strong>Pertanggungjawaban Perjalanan Dinas</strong> adalah platform digital terintegrasi yang digunakan untuk memproses pelaporan, verifikasi, dan penyelesaian administrasi biaya perjalanan dinas di lingkungan Setjen DPR RI.</p>
+    <p>Persyaratan pertanggungjawaban perjalanan dinas mengacu pada ketentuan yang berlaku. Rujukan: <a href="https://jdih.kemenkeu.go.id/dok/113-pmk-05-2012" target="_blank" rel="noopener noreferrer">PMK No. 113/PMK.05/2012</a> dan <a href="https://jdih.dpr.go.id/setjen/detail-dokumen/tipe/peraturan_sekjen/perjalanan-dinas-sekretariat-jenderal-dewan-perwakilan-rakyat-republik-indonesia" target="_blank" rel="noopener noreferrer">Persekjen DPR RI No. 1 Tahun 2024</a>.</p>
+    <p><strong>Fitur utama:</strong></p>
+    <p style="margin-left: 1rem;">• Upload bukti pengeluaran secara digital (tiket, boarding pass, kwitansi hotel)<br>
+       • Verifikasi otomatis berdasarkan Standar Biaya Masukan (SBM)<br>
+       • Pelacakan status pembayaran reimbursement<br>
+       • Riwayat pertanggungjawaban tersimpan rapi</p>
+    <div class="modal-actions">
+      <a href="https://digitall.dpr.go.id/home" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buka Sistem Pertanggungjawaban <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="footer-brand-icon"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5M4 10h16M5 19h14M3 22h18M6 10v9m4-9v9m4-9v9m4-9v9"></path><path class="icon-accent" d="M10 7h4"></path></svg></div><span>Bagian Perjalanan</span></div>
+        <p class="footer-desc">Unit kerja di bawah Biro Keuangan Sekretariat Jenderal DPR RI yang melaksanakan administrasi perjalanan dinas dalam negeri dan luar negeri.</p>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <ul class="footer-links">
+          <li><a href="#struktur">Subbagian</a></li>
+          <li><a href="#regulasi">Regulasi</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#digital">Inovasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Referensi</h4>
+        <ul class="footer-links">
+          <li><a href="https://repositori.dpr.go.id" target="_blank" rel="noopener noreferrer">Repositori DPR RI</a></li>
+          <li><a href="https://jdih.dpr.go.id" target="_blank" rel="noopener noreferrer">JDIH Setjen DPR RI</a></li>
+          <li><a href="https://emedia.dpr.go.id" target="_blank" rel="noopener noreferrer">eMedia DPR RI</a></li>
+          <li><a href="https://jdih.kemenkeu.go.id" target="_blank" rel="noopener noreferrer">JDIH Kemenkeu</a></li>
+          <li><a href="https://ktln.setneg.go.id" target="_blank" rel="noopener noreferrer">KTLN Setneg</a></li>
+          <li><a href="https://www.imigrasi.go.id" target="_blank" rel="noopener noreferrer">Ditjen Imigrasi</a></li>
+          <li><a href="https://peraturan.bpk.go.id" target="_blank" rel="noopener noreferrer">Database BPK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:0 0 1.25rem;padding:1rem 1.2rem;border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:.78rem;line-height:1.6;color:rgba(255,255,255,.55)">
+<strong style="color:rgba(255,255,255,.8)">Catatan:</strong> perjadin.site merupakan portal informasi/referensi dan bukan merupakan situs resmi Sekretariat Jenderal DPR RI. Untuk informasi resmi, tetap merujuk pada dpr.go.id, JDIH DPR RI, dan sumber resmi pemerintah terkait.
+</div>
+<div class="footer-bottom">
+      <span>© <span id="copyrightYear">2026</span> Bagian Perjalanan — Sekretariat Jenderal DPR RI. Hak cipta dilindungi.</span>
+      <span>Republik Indonesia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    document.body.classList.remove('no-scroll');
+  }, 1200);
+});
+setTimeout(() => {
+  const l = document.getElementById('loader');
+  if (l && !l.classList.contains('hidden')) {
+    l.classList.add('hidden');
+    document.body.classList.remove('no-scroll');
+  }
+}, 4500);
+
+function updateThemeIcon() {
+ const button=document.getElementById("themeToggle");
+ button.innerHTML=currentTheme === "dark" ? "<svg class=\"ui-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/></svg>" : "<svg class=\"ui-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 14A9 9 0 0 1 10 3a9 9 0 1 0 10 11Z\"/></svg>";
+ button.setAttribute("aria-label",currentTheme === "dark" ? "Aktifkan mode terang" : "Aktifkan mode gelap");
+ button.setAttribute("aria-pressed",String(currentTheme === "dark"));
+}
+let currentTheme = 'light';
+try { currentTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (_) {}
+document.body.setAttribute('data-theme', currentTheme);
+updateThemeIcon();
+document.getElementById('themeToggle').addEventListener('click', () => {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', currentTheme);
+  updateThemeIcon();
+  try { localStorage.setItem('theme', currentTheme); } catch (_) {}
+});
+
+const navbar = document.getElementById('navbar');
+const navLinksEl = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  let current = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 200;
+    if (window.scrollY >= top) current = sec.getAttribute('id');
+  });
+  navLinksEl.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+
+const hamburger = document.getElementById('hamburger');
+const navLinksList = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+function toggleMenu(open) {
+  hamburger.classList.toggle('active', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  navLinksList.classList.toggle('open', open);
+  navOverlay.classList.toggle('open', open);
+}
+hamburger.addEventListener('click', () => toggleMenu(!navLinksList.classList.contains('open')));
+navOverlay.addEventListener('click', () => toggleMenu(false));
+navLinksEl.forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+let modalTrigger = null;
+function openModal(id) {
+ const modal=document.getElementById(id); if(!modal)return;
+ modalTrigger=document.activeElement; modal.classList.add('open'); document.body.style.overflow='hidden';
+ modal.querySelector('.modal-close').focus();
+}
+function closeModal(id) {
+ const modal=document.getElementById(id); if(!modal)return;
+ modal.classList.remove('open'); document.body.style.overflow=''; modalTrigger?.focus();
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+ overlay.setAttribute('role','dialog'); overlay.setAttribute('aria-modal','true');
+ const heading=overlay.querySelector('h3'); heading.id=overlay.id+'-title'; overlay.setAttribute('aria-labelledby',heading.id);
+ overlay.querySelector('.modal-close').setAttribute('aria-label','Tutup dialog');
+ overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal(overlay.id);});
+});
+document.addEventListener('keydown',e=>{
+ const modal=document.querySelector('.modal-overlay.open');
+ if(e.key==='Escape') { if(modal)closeModal(modal.id); toggleMenu(false); }
+ if(e.key==='Tab'&&modal) {
+  const focusable=Array.from(modal.querySelectorAll('button,a[href],[tabindex="0"]')); const first=focusable[0],last=focusable[focusable.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+ }
+});
+document.querySelectorAll('[onclick^="openModal"]').forEach(el=>{
+ el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-haspopup','dialog');
+ el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+});
+hamburger.setAttribute('aria-controls','navLinks');hamburger.setAttribute('aria-expanded','false');hamburger.setAttribute('aria-label','Buka atau tutup navigasi');
+document.getElementById('copyrightYear').textContent=new Date().getFullYear();
+
+function toggleFaq(el) {
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+  if (!wasOpen) el.classList.add('open');
+  document.querySelectorAll('.faq-item').forEach(item => item.querySelector('.faq-question').setAttribute('aria-expanded', String(item.classList.contains('open'))));
+}
+
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('active'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+function animateCounter(el) {
+  const target = +el.dataset.target;
+  const dur = 2000;
+  const start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+    el.textContent = Math.floor(eased * target).toLocaleString('id-ID');
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target.toLocaleString('id-ID');
+  }
+  requestAnimationFrame(step);
+}
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
+</script>
+</body>
+</html>
