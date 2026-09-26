@@ -186,3 +186,12 @@ const heroBuildingImage=document.getElementById('heroBuildingImage');
 if(heroBuildingImage){
   heroBuildingImage.addEventListener('error',()=>heroBuildingImage.remove());
 }
+
+
+document.querySelectorAll('img[data-external-image]').forEach(img=>{
+  img.addEventListener('error',()=>{
+    const wrap=img.closest('.bento-card-icon');
+    if(wrap) wrap.classList.add('external-image-missing');
+    img.remove();
+  });
+});
