@@ -772,51 +772,7 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   border-radius:50%;
   flex:0 0 7px;
   background:currentColor;
-  box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent);
 }
-
-/* Active: green, aligned with the visual language used by "Berlaku" */
-.ecosystem-card-status:has(+ .ecosystem-card-stage + h3:is(:where(*))) {}
-
-/* Status-specific styling without extra data attributes */
-.bento-card:has(.ecosystem-card-status:nth-child(2)) .ecosystem-card-status{}
-
-/* Default / internal */
-.ecosystem-card-status{
-  background:rgba(22,75,112,.08);
-  color:#164B70;
-  border-color:rgba(22,75,112,.18);
-}
-.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{}
-
-/* Named application status colors */
-.bento-card:has(h3:nth-of-type(1)){}
-
-/* Use adjacent card titles to preserve current HTML structure */
-.bento-card:has(h3:nth-child(n)) .ecosystem-card-status{}
-
-.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{}
-
-.bento-card:has(h3){
-  --status-bg:rgba(22,75,112,.08);
-  --status-color:#164B70;
-  --status-border:rgba(22,75,112,.18);
-}
-.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{
-  background:var(--status-bg);
-  color:var(--status-color);
-  border-color:var(--status-border);
-}
-
-/* Active systems */
-.bento-card:has(h3:nth-child(n)){}
-
-/* Stable selectors using card content */
-.bento-card:has(h3){}
-
-/* PANDORA / SiMerpati */
-.bento-card:has(h3) .ecosystem-card-status.status-active{}
-
 .ecosystem-card-status.status-active{
   background:rgba(28,126,79,.10);
   color:#17663f;
@@ -841,3 +797,6 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 [data-theme="dark"] .ecosystem-card-status.status-internal{color:#9BCBF0;background:rgba(155,203,240,.10);border-color:rgba(155,203,240,.22)}
 [data-theme="dark"] .ecosystem-card-status.status-development{color:#E9CB8D;background:rgba(233,203,141,.10);border-color:rgba(233,203,141,.22)}
 [data-theme="dark"] .ecosystem-card-status.status-uat{color:#C5A8FF;background:rgba(197,168,255,.10);border-color:rgba(197,168,255,.22)}
+@media(max-width:600px){
+  .ecosystem-card-status{margin-bottom:.7rem}
+}
