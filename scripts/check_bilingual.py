@@ -11,7 +11,9 @@ def count(html, pattern):
     return len(re.findall(pattern, html, flags=re.I))
 
 def hrefs(html):
-    return sorted(set(re.findall(r'href="(https?://[^"]+)"', html)))
+    # Compare only actual anchor destinations. Canonical, favicon, stylesheet,
+    # and language-specific head links are intentionally different between pages.
+    return sorted(set(re.findall(r'<a\b[^>]*\bhref="(https?://[^"]+)"', html, flags=re.I)))
 
 def section_ids(html):
     return re.findall(r'<section[^>]+id="([^"]+)"', html, flags=re.I)
@@ -23,7 +25,9 @@ def stages(html):
     return re.findall(r'<span class="ecosystem-card-stage">([^<]+)</span>', html)
 
 def status_count(html):
-    return count(html, r'class="ecosystem-card-status"')
+    # Status badges carry modifier classes, e.g.
+    # class="ecosystem-card-status status-active".
+    return count(html, r'class="ecosystem-card-status(?:\s+[^"]*)?"')
 
 def main():
     data={k:read(v) for k,v in FILES.items()}
@@ -43,8 +47,9 @@ def main():
                    f"section IDs: {section_ids(data['id'])} vs {section_ids(data['en'])}"))
     checks.append((modal_ids(data["id"])==modal_ids(data["en"]),
                    f"modal IDs: ID={len(modal_ids(data['id']))}, EN={len(modal_ids(data['en']))}"))
-    checks.append((hrefs(data["id"])==hrefs(data["en"]),
-                   "external link sets match"))
+    id_links, en_links = hrefs(data["id"]), hrefs(data["en"])
+    checks.append((id_links==en_links,
+                   f"external anchor link sets match: ID={len(id_links)}, EN={len(en_links)}"))
     checks.append((status_count(data["id"])==6 and status_count(data["en"])==6,
                    f"ecosystem statuses: ID={status_count(data['id'])}, EN={status_count(data['en'])}"))
     checks.append((count(data["id"],r'\sonclick=')==0 and count(data["en"],r'\sonclick=')==0,
