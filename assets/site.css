@@ -310,10 +310,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   content:'';
   position:absolute;
   left:50%;
-  bottom:-2.4rem;
+  bottom:-1.2rem;
   width:1px;
-  height:2.4rem;
-  background:linear-gradient(to bottom, rgba(181,139,66,.75), rgba(22,75,112,.18));
+  height:1.2rem;
+  background:linear-gradient(to bottom, rgba(181,139,66,.72), rgba(22,75,112,.30));
 }
 .struktur-leader-icon{
   width:64px;height:64px;border-radius:16px;
@@ -1017,4 +1017,59 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   color:rgba(255,255,255,.45);
   font-size:.69rem;
   line-height:1.5;
+}
+
+
+/* Organizational tree connectors 2026-09-26 */
+.struktur-grid{
+  position:relative;
+}
+@media (min-width:1025px){
+  .struktur-grid::before{
+    content:"";
+    position:absolute;
+    top:-1.2rem;
+    left:calc((100% - 3rem) / 6);
+    right:calc((100% - 3rem) / 6);
+    height:1px;
+    background:linear-gradient(
+      90deg,
+      rgba(22,75,112,.28),
+      rgba(181,139,66,.48) 50%,
+      rgba(22,75,112,.28)
+    );
+    pointer-events:none;
+    z-index:0;
+  }
+  .struktur-card{
+    overflow:visible;
+  }
+  .struktur-card::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:-1.2rem;
+    width:1px;
+    height:1.2rem;
+    background:rgba(22,75,112,.26);
+    pointer-events:none;
+    z-index:-1;
+  }
+  [data-theme="dark"] .struktur-grid::before{
+    background:linear-gradient(
+      90deg,
+      rgba(155,203,240,.32),
+      rgba(233,203,141,.52) 50%,
+      rgba(155,203,240,.32)
+    );
+  }
+  [data-theme="dark"] .struktur-card::after{
+    background:rgba(155,203,240,.34);
+  }
+}
+@media (max-width:1024px){
+  .struktur-leader::after{
+    bottom:-2.4rem;
+    height:2.4rem;
+  }
 }
