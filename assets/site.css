@@ -822,3 +822,31 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   animation:ecosystemActivePulse 2.6s ease-in-out infinite;
   transform-origin:center;
 }
+
+
+/* Development status hover glow 2026-09-26 */
+.ecosystem-card-status.status-development{
+  transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease, background-color .25s ease;
+}
+.ecosystem-card-status.status-development:hover,
+.bento-card:hover .ecosystem-card-status.status-development{
+  box-shadow:
+    0 0 0 3px rgba(176,116,0,.05),
+    0 4px 14px rgba(176,116,0,.14);
+  border-color:rgba(176,116,0,.32);
+  background:rgba(176,116,0,.12);
+  transform:translateY(-1px);
+}
+[data-theme="dark"] .ecosystem-card-status.status-development:hover,
+[data-theme="dark"] .bento-card:hover .ecosystem-card-status.status-development{
+  box-shadow:
+    0 0 0 3px rgba(233,203,141,.05),
+    0 4px 14px rgba(233,203,141,.12);
+  border-color:rgba(233,203,141,.30);
+  background:rgba(233,203,141,.12);
+}
+@media (prefers-reduced-motion: reduce){
+  .ecosystem-card-status.status-development{transition:none}
+  .ecosystem-card-status.status-development:hover,
+  .bento-card:hover .ecosystem-card-status.status-development{transform:none}
+}
