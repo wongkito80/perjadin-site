@@ -811,3 +811,14 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
     padding:.26rem .58rem;
   }
 }
+
+
+/* Subtle active-status pulse 2026-09-26 */
+@keyframes ecosystemActivePulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(23,102,63,.18)}
+  50%{transform:scale(1.14);box-shadow:0 0 0 4px rgba(23,102,63,0)}
+}
+.ecosystem-card-status.status-active .status-dot{
+  animation:ecosystemActivePulse 2.6s ease-in-out infinite;
+  transform-origin:center;
+}
