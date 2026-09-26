@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Aturan Terkait Paspor">
+<defs><linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173d63"/><stop offset="1" stop-color="#0a2440"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7dc8f"/><stop offset="1" stop-color="#b7832d"/></linearGradient></defs>
+<path d="M64 6 116 36v56L64 122 12 92V36Z" fill="url(#n)" stroke="url(#g)" stroke-width="5"/>
+<circle cx="84" cy="54" r="27" fill="#eef4f8" stroke="url(#g)" stroke-width="3"/><path d="M57 54h54M84 27c-7 7-11 17-11 27s4 20 11 27M84 27c7 7 11 17 11 27s-4 20-11 27" fill="none" stroke="#8fa9bf" stroke-width="2.5"/>
+<rect x="27" y="31" width="54" height="72" rx="8" fill="#173d63" stroke="url(#g)" stroke-width="3"/>
+<circle cx="54" cy="58" r="15" fill="none" stroke="url(#g)" stroke-width="3"/><path d="M39 58h30M54 43c-5 5-7 10-7 15s2 10 7 15M54 43c5 5 7 10 7 15s-2 10-7 15" fill="none" stroke="url(#g)" stroke-width="2.5"/>
+<path d="M40 88h28" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+<rect x="69" y="76" width="31" height="26" rx="5" fill="#fff"/><path d="M76 85h17M76 92h13" stroke="#9db1c5" stroke-width="3.5" stroke-linecap="round"/>
+</svg>
