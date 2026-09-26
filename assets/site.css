@@ -703,3 +703,45 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 
 
 #loader{display:none}body.no-scroll{overflow:auto}.reveal{opacity:1;transform:none}
+
+/* Digital timeline refinement 2026-09-26 */
+.ecosystem-card-stage { white-space: normal; line-height: 1.35; }
+.digital-timeline {
+  grid-column: 1 / -1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-left: 1.6rem;
+}
+.digital-timeline::before {
+  content: "";
+  position: absolute;
+  left: .36rem;
+  top: .85rem;
+  bottom: .85rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--brand), var(--gold));
+  opacity: .45;
+}
+.digital-timeline .digital-history-card {
+  grid-column: auto;
+  position: relative;
+}
+.digital-timeline .digital-history-card::before {
+  content: "";
+  position: absolute;
+  left: -1.58rem;
+  top: 1.55rem;
+  width: .72rem;
+  height: .72rem;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 4px var(--bg-alt);
+}
+@media (max-width: 600px) {
+  .digital-timeline { padding-left: 1.25rem; }
+  .digital-timeline::before { left: .24rem; }
+  .digital-timeline .digital-history-card::before { left: -1.28rem; top: 1.25rem; }
+}
