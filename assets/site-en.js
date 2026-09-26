@@ -83,11 +83,19 @@ document.addEventListener('keydown',e=>{
   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
  }
 });
-document.querySelectorAll('[onclick^="openModal"]').forEach(el=>{
- el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-haspopup','dialog');const target=(el.getAttribute('onclick')||'').match(/openModal\('([^']+)'\)/);if(target)el.setAttribute('aria-controls',target[1]);
- el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+document.querySelectorAll('[aria-haspopup="dialog"][aria-controls]').forEach(el=>{
+ el.addEventListener('click',()=>openModal(el.getAttribute('aria-controls')));
+ el.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(el.getAttribute('aria-controls'));}
+ });
 });
-hamburger.setAttribute('aria-controls','navLinks');hamburger.setAttribute('aria-expanded','false');hamburger.setAttribute('aria-label','Open atau tutup navigasi');
+document.querySelectorAll('.modal-close').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  const overlay=btn.closest('.modal-overlay');
+  if(overlay) closeModal(overlay.id);
+ });
+});
+hamburger.setAttribute('aria-controls','navLinks');hamburger.setAttribute('aria-expanded','false');hamburger.setAttribute('aria-label','Open or close navigation');
 document.getElementById('copyrightYear').textContent=new Date().getFullYear();
 
 function toggleFaq(el) {
@@ -115,6 +123,12 @@ function setFaqFilter(category) {
     }
   });
 }
+document.querySelectorAll('[data-faq-filter]').forEach(btn=>{
+ btn.addEventListener('click',()=>setFaqFilter(btn.dataset.faqFilter));
+});
+document.querySelectorAll('.faq-question').forEach(btn=>{
+ btn.addEventListener('click',()=>toggleFaq(btn.closest('.faq-item')));
+});
 
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -130,9 +144,9 @@ function animateCounter(el) {
   function step(now) {
     const p = Math.min((now - start) / dur, 1);
     const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-    el.textContent = Math.floor(eased * target).toLocaleString('id-ID');
+    el.textContent = Math.floor(eased * target).toLocaleString('en-US');
     if (p < 1) requestAnimationFrame(step);
-    else el.textContent = target.toLocaleString('id-ID');
+    else el.textContent = target.toLocaleString('en-US');
   }
   requestAnimationFrame(step);
 }
