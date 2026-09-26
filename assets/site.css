@@ -875,3 +875,19 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
     transform:translate(50%,-50%);
   }
 }
+
+
+/* Dark-mode stage number contrast 2026-09-26 */
+[data-theme="dark"] .ecosystem-step-icon{
+  background:linear-gradient(135deg,#B9E0FA,#8FC7EC);
+  color:#0C2740;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 7px 18px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.35);
+  text-shadow:none;
+}
+[data-theme="dark"] .ecosystem-step:hover .ecosystem-step-icon,
+[data-theme="dark"] .ecosystem-step:focus-visible .ecosystem-step-icon{
+  background:linear-gradient(135deg,#C8E8FC,#9ED2F2);
+  color:#08233A;
+  box-shadow:0 9px 22px rgba(0,0,0,.25),0 0 0 3px rgba(155,203,240,.08);
+}
