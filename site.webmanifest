@@ -1,0 +1,25 @@
+{
+  "name": "Bagian Perjalanan — Sekretariat Jenderal DPR RI",
+  "short_name": "Perjadin",
+  "description": "Portal informasi perjalanan dinas, regulasi, FAQ, dan ekosistem digital Bagian Perjalanan.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F7F9FC",
+  "theme_color": "#164B70",
+  "lang": "id-ID",
+  "icons": [
+    {
+      "src": "/assets/logo-aplikasi-perjalanan-dinas.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
