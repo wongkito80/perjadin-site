@@ -749,12 +749,16 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 
 /* Ecosystem lifecycle status 2026-09-26 */
 .ecosystem-card-status{
+  position:absolute;
+  top:1.15rem;
+  right:1.15rem;
+  z-index:2;
   display:inline-flex;
   align-items:center;
   gap:.42rem;
   width:max-content;
-  max-width:100%;
-  margin:0 0 .62rem 0;
+  max-width:calc(100% - 6rem);
+  margin:0;
   min-height:28px;
   padding:.28rem .68rem;
   border-radius:999px;
@@ -765,6 +769,7 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   text-transform:uppercase;
   line-height:1.2;
   white-space:normal;
+  box-shadow:0 3px 10px rgba(15,35,55,.06);
 }
 .ecosystem-card-status .status-dot{
   width:7px;
@@ -798,5 +803,11 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 [data-theme="dark"] .ecosystem-card-status.status-development{color:#E9CB8D;background:rgba(233,203,141,.10);border-color:rgba(233,203,141,.22)}
 [data-theme="dark"] .ecosystem-card-status.status-uat{color:#C5A8FF;background:rgba(197,168,255,.10);border-color:rgba(197,168,255,.22)}
 @media(max-width:600px){
-  .ecosystem-card-status{margin-bottom:.7rem}
+  .ecosystem-card-status{
+    top:.9rem;
+    right:.9rem;
+    max-width:calc(100% - 5.5rem);
+    font-size:.61rem;
+    padding:.26rem .58rem;
+  }
 }
