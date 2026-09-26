@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">PANDORA</title>
+  <desc id="desc">Identitas visual PANDORA untuk arsip transformasi digital perjalanan dinas.</desc>
+  <rect x="10" y="10" width="108" height="108" rx="28" fill="#0f4c75"/>
+  <circle cx="92" cy="34" r="7" fill="#ffffff" opacity=".95"/>
+  <circle cx="102" cy="52" r="4" fill="#ffffff" opacity=".72"/>
+  <path d="M39 34h27c17 0 28 9 28 24 0 16-12 25-29 25H54v18H39V34zm15 14v21h11c8 0 13-4 13-11 0-6-5-10-13-10H54z" fill="#ffffff"/>
+</svg>
