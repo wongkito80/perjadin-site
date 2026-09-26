@@ -181,3 +181,8 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
     });
   }
 })();
+
+const heroBuildingImage=document.getElementById('heroBuildingImage');
+if(heroBuildingImage){
+  heroBuildingImage.addEventListener('error',()=>heroBuildingImage.remove());
+}
