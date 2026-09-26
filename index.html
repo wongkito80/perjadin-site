@@ -449,7 +449,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ecosystem-step strong{display:block;font-size:.82rem;line-height:1.35}
 .ecosystem-note{max-width:900px;margin:-.5rem auto 1.6rem;text-align:center;color:var(--text-muted);font-size:.88rem;line-height:1.65}
 .ecosystem-card-stage{display:inline-flex;align-items:center;padding:.28rem .65rem;border-radius:999px;background:rgba(22,75,112,.08);color:var(--brand);font-size:.67rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.8rem}
-.ecosystem-reference-title{grid-column:1/-1;margin-top:.8rem;padding-top:1.4rem;border-top:1px solid var(--border);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.digital-history-title,.ecosystem-reference-title{grid-column:1/-1;margin-top:.8rem;padding-top:1.4rem;border-top:1px solid var(--border);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.digital-history-card{grid-column:span 6;background:linear-gradient(135deg,rgba(22,75,112,.06),rgba(181,139,66,.07));border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;text-decoration:none;color:inherit;transition:all .3s var(--ease-out)}
+.digital-history-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(181,139,66,.45)}
+.digital-history-icon{width:58px;height:58px;flex:0 0 58px;display:flex;align-items:center;justify-content:center}
+.digital-history-icon img{width:100%;height:100%;object-fit:contain}
+.digital-history-card h3{font-size:1rem;margin:.1rem 0 .35rem}
+.digital-history-card p{font-size:.86rem;margin:0;color:var(--text-muted);line-height:1.6}
+.digital-history-date{display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:800;color:var(--brand);letter-spacing:.03em}
+@media(max-width:700px){.digital-history-card{grid-column:1/-1}}
 @media(max-width:900px){.ecosystem-flow{grid-template-columns:repeat(3,1fr)}.ecosystem-step:nth-child(3)::after{display:none}}
 @media(max-width:600px){.ecosystem-flow{grid-template-columns:1fr}.ecosystem-step::after{content:'↓'!important;right:auto!important;left:50%!important;top:auto!important;bottom:-.72rem!important;transform:translateX(-50%)!important}.ecosystem-step:last-child::after{display:none}}
 .bento-wide { grid-column: span 7; } .bento-narrow { grid-column: span 5; }
@@ -959,12 +967,6 @@ a.bento-card { display:block; }
   </div>
 </section>
 
-oreferrer"><div class="bento-card-icon institutional-logo-wrap"><img src="/assets/logo-berita-dpr.svg?v=20260926-1" alt="Berita DPR RI" class="institutional-logo-img" width="256" height="256" loading="lazy" decoding="async"></div><h3>Berita DPR RI</h3><p>Ikuti berita kegiatan DPR RI melalui eMedia. Redaksi memperbarui berita di portal sumber sehingga Anda tidak perlu mengubah kode halaman ini.</p><div class="bento-meta">Sumber <strong>eMedia DPR RI</strong></div><span class="bento-link">Buka berita terkini <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3h7v7m0-7L10 14M10 3H4v17h17v-6"></path></svg></span></a>
-      <a class="bento-card bento-half reveal" href="https://www.dpr.go.id/" target="_blank" rel="noopener noreferrer"><div class="bento-card-icon institutional-logo-wrap dpr-official-logo"><img src="https://pdo.dpr.go.id/pdo-content/images/logo-dpr-ri.png" alt="Lambang resmi DPR RI" class="institutional-logo-img" width="256" height="256" loading="lazy" decoding="async"></div><h3>Website Resmi DPR RI</h3><p>Akses informasi kelembagaan, agenda, dan publikasi Dewan Perwakilan Rakyat Republik Indonesia.</p><div class="bento-meta">Portal <strong>www.dpr.go.id</strong></div><span class="bento-link">Kunjungi website DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3h7v7m0-7L10 14M10 3H4v17h17v-6"></path></svg></span></a>
-    </div>
-  </div>
-</section>
-
 <!-- MODAL — PIMPINAN UNIT -->
 <div class="modal-overlay" id="modal-kepala"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-kepala')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Kepala Bagian Perjalanan" class="struktur-logo-img" width="96" height="96" decoding="async"></div><span class="modal-tag">Pimpinan Unit</span><h3>Kepala Bagian Perjalanan</h3><p>Memimpin dan mengoordinasikan pelaksanaan tugas Bagian Perjalanan, melakukan pengendalian, pembinaan, monitoring, dan evaluasi penyelenggaraan administrasi perjalanan dinas, serta memastikan koordinasi antar-subbagian berjalan efektif, tertib, dan akuntabel.</p><p>Dalam pelaksanaan tugasnya, Kepala Bagian Perjalanan mengoordinasikan <strong>Subbagian Perjalanan Dinas Dalam Negeri Dewan</strong>, <strong>Subbagian Perjalanan Dinas Dalam Negeri Setjen</strong>, dan <strong>Subbagian Perjalanan Dinas Luar Negeri</strong>.</p></div></div>
 
@@ -1237,6 +1239,6 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 })();
 </script>
 <!-- LANG-NAV-ID-END -->
-<!-- deploy-refresh: ecosystem-digital-2026-09-26 -->
+<!-- deploy-refresh: repair-digital-bottom-memorial-2026-09-26 -->
 </body>
 </html>
