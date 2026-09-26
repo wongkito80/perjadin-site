@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="t">
+<title id="t">Berita DPR RI</title>
+<defs>
+  <linearGradient id="n1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#123B63"/><stop offset="1" stop-color="#0A2743"/></linearGradient>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F3D88A"/><stop offset="1" stop-color="#B88A33"/></linearGradient>
+</defs>
+<rect x="34" y="34" width="188" height="188" rx="42" fill="#F8FAFC"/>
+<rect x="55" y="58" width="146" height="140" rx="20" fill="url(#n1)"/>
+<rect x="73" y="78" width="110" height="18" rx="9" fill="url(#g)"/>
+<rect x="73" y="111" width="48" height="48" rx="8" fill="#DDEAF4"/>
+<rect x="132" y="111" width="51" height="10" rx="5" fill="#DDEAF4"/>
+<rect x="132" y="130" width="43" height="10" rx="5" fill="#9FBBD0"/>
+<rect x="132" y="149" width="35" height="10" rx="5" fill="#9FBBD0"/>
+<rect x="73" y="173" width="110" height="9" rx="4.5" fill="#DDEAF4"/>
+</svg>
