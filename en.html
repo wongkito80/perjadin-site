@@ -79,6 +79,7 @@
 }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html{scroll-behavior:smooth}
 body {
   font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px; line-height: 1.65;
@@ -267,7 +268,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 .hero-stat:hover { background: white; border-color: var(--brand); transform: translateX(-4px); box-shadow: 0 8px 24px rgba(22,75,112,0.15); }
-.hero-stat.quick-nav{cursor:pointer;position:relative;padding-right:2.2rem}
+.hero-stat.quick-nav{cursor:pointer;position:relative;padding-right:2.2rem;text-decoration:none;color:inherit}
 .hero-stat.quick-nav::after{content:'→';position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-weight:700;color:var(--brand);opacity:.7;transition:transform .25s ease,opacity .25s ease}
 .hero-stat.quick-nav:hover::after{transform:translate(3px,-50%);opacity:1}
 .hero-stat.quick-nav:focus-visible{outline:3px solid rgba(181,139,66,.35);outline-offset:4px}
@@ -673,9 +674,9 @@ a.bento-card { display:block; }
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Organizational Structure" onclick="document.querySelector('#struktur')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#struktur')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="4">0</span></div><div class="hero-stat-label">Organizational Units</div></div>
-      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Regulations" onclick="document.querySelector('#regulasi')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#regulasi')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="25">0</span></div><div class="hero-stat-label">Regulations</div></div>
-      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Digital Innovations" onclick="document.querySelector('#inovasi')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#inovasi')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="6">0</span></div><div class="hero-stat-label">Digital Innovations</div></div>
+      <a class="hero-stat quick-nav" href="#struktur" aria-label="View Organizational Structure"><div class="hero-stat-value"><span class="counter" data-target="4">0</span></div><div class="hero-stat-label">Organizational Units</div></a>
+      <a class="hero-stat quick-nav" href="#regulasi" aria-label="View Regulations"><div class="hero-stat-value"><span class="counter" data-target="25">0</span></div><div class="hero-stat-label">Regulations</div></a>
+      <a class="hero-stat quick-nav" href="#inovasi" aria-label="View Digital Innovations"><div class="hero-stat-value"><span class="counter" data-target="6">0</span></div><div class="hero-stat-label">Digital Innovations</div></a>
     </div>
   </div>
 </div>
@@ -1220,5 +1221,6 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 })();
 </script>
 <!-- LANG-NAV-EN-END -->
+<!-- deploy-refresh: 2026-09-26-0806 -->
 </body>
 </html>
