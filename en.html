@@ -267,6 +267,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 .hero-stat:hover { background: white; border-color: var(--brand); transform: translateX(-4px); box-shadow: 0 8px 24px rgba(22,75,112,0.15); }
+.hero-stat.quick-nav{cursor:pointer;position:relative;padding-right:2.2rem}
+.hero-stat.quick-nav::after{content:'→';position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-weight:700;color:var(--brand);opacity:.7;transition:transform .25s ease,opacity .25s ease}
+.hero-stat.quick-nav:hover::after{transform:translate(3px,-50%);opacity:1}
+.hero-stat.quick-nav:focus-visible{outline:3px solid rgba(181,139,66,.35);outline-offset:4px}
 .hero-stat-value { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cinder); line-height: 1; margin-bottom: 0.25rem; }
 .hero-stat-value span { color: var(--brand); }
 .hero-stat-label { font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
@@ -669,50 +673,12 @@ a.bento-card { display:block; }
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="3">0</span></div><div class="hero-stat-label">Subdivisions</div></div>
-      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="26">0</span><span>+</span></div><div class="hero-stat-label">Regulations</div></div>
-      <div class="hero-stat"><div class="hero-stat-value"><span class="counter" data-target="6">0</span></div><div class="hero-stat-label">Digital Innovations</div></div>
+      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Organizational Structure" onclick="document.querySelector('#struktur')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#struktur')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="4">0</span></div><div class="hero-stat-label">Organizational Units</div></div>
+      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Regulations" onclick="document.querySelector('#regulasi')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#regulasi')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="25">0</span></div><div class="hero-stat-label">Regulations</div></div>
+      <div class="hero-stat quick-nav" role="button" tabindex="0" aria-label="View Digital Innovations" onclick="document.querySelector('#inovasi')?.scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.querySelector('#inovasi')?.scrollIntoView({behavior:'smooth'})}"><div class="hero-stat-value"><span class="counter" data-target="6">0</span></div><div class="hero-stat-label">Digital Innovations</div></div>
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
-</section>
-
-<section class="section" id="struktur">
-  <div class="section-inner">
-    <div class="section-header centered reveal">
-      <div class="section-label">Organizational Structure</div>
-      <h2 class="section-title">Travel Division Structure</h2>
-      <p class="section-subtitle">The Head of the Travel Division leads and coordinates the three implementing subdivisions within the Travel Division</p>
-    </div>
-    <div class="struktur-leader reveal" role="button" tabindex="0" onclick="openModal('modal-kepala')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-kepala')}">
-      <div class="struktur-leader-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Head of the Travel Division" class="struktur-logo-img" width="96" height="96" decoding="async"></div>
-      <div>
-        <span class="struktur-leader-eyebrow">Unit Leadership</span>
-        <h3>Head of the Travel Division</h3>
-        <p>Leads and coordinates the work of the Travel Division, provides control and guidance, monitors and evaluates official travel administration, and ensures effective, orderly, and accountable coordination among the subdivisions.</p>
-      </div>
-    </div>
-    <div class="struktur-grid">
-      <div class="struktur-card reveal" onclick="openModal('modal-dewan')">
-        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-dewan.svg?v=20260926-2" alt="Domestic Official Travel Subdivision for the Council" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
-        <h3>Domestic Official Travel Subdivision for the Council</h3>
-        <p>Manages domestic official travel administration for Members of DPR RI.</p>
-        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
-      </div>
-      <div class="struktur-card reveal reveal-delay-1" onclick="openModal('modal-setjen')">
-        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-setjen.svg?v=20260926-2" alt="Domestic Official Travel Subdivision for the Secretariat General" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
-        <h3>Domestic Official Travel Subdivision for the Secretariat General</h3>
-        <p>Manages domestic official travel administration for employees of the Secretariat General, as well as internal administration of the Travel Division.</p>
-        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
-      </div>
-      <div class="struktur-card reveal reveal-delay-2" onclick="openModal('modal-luar')">
-        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-luar-negeri.svg?v=20260926-2" alt="International Official Travel Subdivision" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
-        <h3>International Official Travel Subdivision</h3>
-        <p>Manages international official travel administration for Members of DPR RI and Secretariat General employees.</p>
-        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
 
 <!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section section-alt" id="regulasi">
