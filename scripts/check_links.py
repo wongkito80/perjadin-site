@@ -36,25 +36,35 @@ def check(url):
     host=urlparse(url).hostname or ""
     if host in SKIP_HOSTS:
         return "SKIP", "internal/authenticated endpoint"
-    headers={"User-Agent":"perjadin-link-check/1.0"}
-    for method in ("HEAD","GET"):
-        req=request.Request(url, headers=headers, method=method)
-        try:
-            with request.urlopen(req, timeout=20) as r:
-                code=getattr(r,"status",200)
-                return ("OK", str(code)) if code < 400 else ("WARN", str(code))
-        except error.HTTPError as e:
-            if e.code in BROKEN_CODES:
-                return "BROKEN", str(e.code)
-            if e.code in SOFT_CODES or e.code >= 500:
-                return "WARN", str(e.code)
-            if method == "GET":
-                return "WARN", str(e.code)
-        except Exception as e:
-            if method == "GET":
-                return "WARN", type(e).__name__
-        time.sleep(.2)
-    return "WARN", "unverified"
+
+    headers={"User-Agent":"Mozilla/5.0 (compatible; perjadin-link-check/1.1)"}
+
+    # HEAD is only a fast hint. Some government/public servers reject HEAD
+    # even when the same URL works normally in a browser, so never mark a
+    # link broken from HEAD alone.
+    try:
+        req=request.Request(url, headers=headers, method="HEAD")
+        with request.urlopen(req, timeout=20) as r:
+            code=getattr(r,"status",200)
+            if code < 400:
+                return "OK", str(code)
+    except Exception:
+        pass
+
+    # Confirm status with GET before declaring 404/410 as genuinely broken.
+    req=request.Request(url, headers=headers, method="GET")
+    try:
+        with request.urlopen(req, timeout=25) as r:
+            code=getattr(r,"status",200)
+            return ("OK", str(code)) if code < 400 else ("WARN", str(code))
+    except error.HTTPError as e:
+        if e.code in BROKEN_CODES:
+            return "BROKEN", str(e.code)
+        if e.code in SOFT_CODES or e.code >= 500:
+            return "WARN", str(e.code)
+        return "WARN", str(e.code)
+    except Exception as e:
+        return "WARN", type(e).__name__
 
 def main():
     broken=[]
