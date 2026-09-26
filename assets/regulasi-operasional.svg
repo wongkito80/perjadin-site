@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Regulasi Operasional">
+<defs><linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173d63"/><stop offset="1" stop-color="#0a2440"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7dc8f"/><stop offset="1" stop-color="#b7832d"/></linearGradient></defs>
+<path d="M64 6 116 36v56L64 122 12 92V36Z" fill="url(#n)" stroke="url(#g)" stroke-width="5"/>
+<path d="M32 40h64M40 40V78M56 40V78M72 40V78M88 40V78M28 80h72M37 31h54L64 20Z" fill="none" stroke="#f7f7f4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="31" y="49" width="49" height="51" rx="7" fill="#fff"/><path d="M40 61h29M40 72h25M40 83h20" stroke="#9db1c5" stroke-width="4" stroke-linecap="round"/>
+<circle cx="88" cy="84" r="15" fill="#f3f5f7" stroke="url(#g)" stroke-width="5"/><circle cx="88" cy="84" r="6" fill="#173d63"/><path d="M88 64v8M88 96v8M68 84h8M100 84h8M74 70l6 6M96 92l6 6M102 70l-6 6M80 92l-6 6" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+</svg>
