@@ -441,13 +441,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .bento-card .bento-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.8rem; font-size: 0.82rem; font-weight: 600; color: var(--brand); transition: gap 0.3s; }
 .bento-card:hover .bento-link { gap: 0.7rem; }
 .ecosystem-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem;align-items:stretch;margin:0 0 2rem}
-.ecosystem-step{background:linear-gradient(180deg,var(--card-bg),rgba(22,75,112,.035));border:1px solid var(--border);border-radius:18px;padding:1.15rem .8rem;text-align:center;position:relative;cursor:pointer;transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out),border-color .3s ease;overflow:hidden}
+.ecosystem-step{background:linear-gradient(180deg,var(--card-bg),rgba(22,75,112,.035));border:1px solid var(--border);border-radius:18px;padding:1.15rem .8rem;text-align:center;position:relative;cursor:pointer;transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out),border-color .3s ease;overflow:visible}
 .ecosystem-step::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--brand),var(--gold))}
 .ecosystem-step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:rgba(181,139,66,.48)}
 .ecosystem-step:focus-visible{outline:3px solid rgba(181,139,66,.30);outline-offset:3px}
 .ecosystem-step-icon{width:42px;height:42px;margin:0 auto .65rem;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;box-shadow:0 7px 18px rgba(22,75,112,.18)}
 .ecosystem-step-hint{display:block;margin-top:.55rem;font-size:.67rem;font-weight:700;color:var(--brand);opacity:.82}
-.ecosystem-step:not(:last-child)::after{content:'→';position:absolute;right:-.65rem;top:50%;transform:translateY(-50%);z-index:2;color:var(--brand);font-weight:800}
+.ecosystem-step:not(:last-child)::after{content:'→';position:absolute;right:-.62rem;top:50%;transform:translate(50%,-50%);z-index:4;color:var(--brand);font-size:1rem;font-weight:800;line-height:1;pointer-events:none;text-shadow:0 1px 0 var(--card-bg)}
 .ecosystem-step-num{display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:.3rem}
 .ecosystem-step strong{display:block;font-size:.82rem;line-height:1.35}
 .ecosystem-note{max-width:900px;margin:-.5rem auto 1.6rem;text-align:center;color:var(--text-muted);font-size:.88rem;line-height:1.65}
@@ -461,7 +461,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .digital-history-card p{font-size:.86rem;margin:0;color:var(--text-muted);line-height:1.6}
 .digital-history-date{display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:800;color:var(--brand);letter-spacing:.03em}
 @media(max-width:700px){.digital-history-card{grid-column:1/-1}}
-@media(max-width:900px){.ecosystem-flow{grid-template-columns:repeat(3,1fr)}.ecosystem-step:nth-child(3)::after{display:none}}
+@media(max-width:900px){.ecosystem-flow{grid-template-columns:repeat(3,1fr)}.ecosystem-step:nth-child(3)::after,.ecosystem-step:nth-child(6)::after{display:none}}
 @media(max-width:600px){.ecosystem-flow{grid-template-columns:1fr}.ecosystem-step::after{content:'↓'!important;right:auto!important;left:50%!important;top:auto!important;bottom:-.72rem!important;transform:translateX(-50%)!important}.ecosystem-step:last-child::after{display:none}}
 .bento-wide { grid-column: span 7; } .bento-narrow { grid-column: span 5; }
 .bento-third { grid-column: span 4; } .bento-half { grid-column: span 6; }
