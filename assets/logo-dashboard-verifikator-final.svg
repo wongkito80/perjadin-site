@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Dashboard Verifikator">
+<defs><linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0d5db5"/><stop offset="1" stop-color="#082b4c"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe08a"/><stop offset=".55" stop-color="#e7b43d"/><stop offset="1" stop-color="#b97914"/></linearGradient></defs>
+<rect x="6" y="6" width="116" height="116" rx="25" fill="url(#n)" stroke="url(#g)" stroke-width="5"/>
+<rect x="23" y="25" width="73" height="61" rx="8" fill="#fff"/>
+<rect x="31" y="34" width="57" height="10" rx="4" fill="#2d8ef0" opacity=".22"/>
+<path d="M33 70V59M46 70V49M59 70V61M72 70V43M85 70V54" stroke="#1b67bd" stroke-width="6" stroke-linecap="round"/>
+<rect x="67" y="54" width="38" height="48" rx="8" fill="#f7fbff" stroke="#b9d4ef" stroke-width="2"/>
+<rect x="74" y="63" width="8" height="8" rx="2" fill="#0d5db5"/><path d="m76 66 2 2 4-5" fill="none" stroke="#ffd45e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="74" y="77" width="8" height="8" rx="2" fill="#0d5db5"/><path d="m76 80 2 2 4-5" fill="none" stroke="#ffd45e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M87 66h11M87 80h11M74 93h19" stroke="#91b5d9" stroke-width="3" stroke-linecap="round"/>
+<circle cx="97" cy="94" r="16" fill="url(#g)"/><circle cx="92" cy="89" r="7" fill="none" stroke="#fff" stroke-width="3.5"/><path d="m97 94 8 8" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/><path d="m89 89 3 3 5-6" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
