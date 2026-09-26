@@ -682,7 +682,45 @@ a.bento-card { display:block; }
 </div>
 </section>
 
-<!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section section-alt" id="regulasi">
+<!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section" id="struktur">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">Organizational Structure</div>
+      <h2 class="section-title">Travel Division Structure</h2>
+      <p class="section-subtitle">The Head of the Travel Division leads and coordinates the three implementing subdivisions within the Travel Division</p>
+    </div>
+    <div class="struktur-leader reveal" role="button" tabindex="0" onclick="openModal('modal-kepala')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-kepala')}">
+      <div class="struktur-leader-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Head of the Travel Division" class="struktur-logo-img" width="96" height="96" decoding="async"></div>
+      <div>
+        <span class="struktur-leader-eyebrow">Unit Leadership</span>
+        <h3>Head of the Travel Division</h3>
+        <p>Leads and coordinates the work of the Travel Division, provides control and guidance, monitors and evaluates official travel administration, and ensures effective, orderly, and accountable coordination among the subdivisions.</p>
+      </div>
+    </div>
+    <div class="struktur-grid">
+      <div class="struktur-card reveal" onclick="openModal('modal-dewan')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-dewan.svg?v=20260926-2" alt="Domestic Official Travel Subdivision for the Council" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>Domestic Official Travel Subdivision for the Council</h3>
+        <p>Manages domestic official travel administration for Members of DPR RI.</p>
+        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-1" onclick="openModal('modal-setjen')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-setjen.svg?v=20260926-2" alt="Domestic Official Travel Subdivision for the Secretariat General" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>Domestic Official Travel Subdivision for the Secretariat General</h3>
+        <p>Manages domestic official travel administration for employees of the Secretariat General, as well as internal administration of the Travel Division.</p>
+        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-2" onclick="openModal('modal-luar')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-luar-negeri.svg?v=20260926-2" alt="International Official Travel Subdivision" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>International Official Travel Subdivision</h3>
+        <p>Manages international official travel administration for Members of DPR RI and Secretariat General employees.</p>
+        <span class="struktur-link">View Details <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="regulasi">
   <div class="section-inner">
     <div class="section-header centered reveal">
       <div class="section-label">Regulatory Framework</div>
@@ -1221,6 +1259,6 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 })();
 </script>
 <!-- LANG-NAV-EN-END -->
-<!-- deploy-refresh: 2026-09-26-0806 -->
+<!-- deploy-refresh: restore-struktur-2026-09-26-0812 -->
 </body>
 </html>
