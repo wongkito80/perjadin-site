@@ -749,23 +749,95 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 
 /* Ecosystem lifecycle status 2026-09-26 */
 .ecosystem-card-status{
-  position:absolute;
-  top:1rem;
-  right:1rem;
   display:inline-flex;
   align-items:center;
+  gap:.42rem;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 .62rem 0;
   min-height:28px;
-  padding:.28rem .65rem;
+  padding:.28rem .68rem;
   border-radius:999px;
-  background:rgba(22,75,112,.08);
-  border:1px solid rgba(22,75,112,.18);
-  color:var(--brand);
-  font-size:.65rem;
+  border:1px solid transparent;
+  font-size:.64rem;
   font-weight:800;
-  letter-spacing:.035em;
+  letter-spacing:.055em;
   text-transform:uppercase;
   line-height:1.2;
+  white-space:normal;
 }
-@media(max-width:600px){
-  .ecosystem-card-status{position:static;margin:0 0 .7rem 0;max-width:100%;white-space:normal;}
+.ecosystem-card-status .status-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  flex:0 0 7px;
+  background:currentColor;
+  box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent);
 }
+
+/* Active: green, aligned with the visual language used by "Berlaku" */
+.ecosystem-card-status:has(+ .ecosystem-card-stage + h3:is(:where(*))) {}
+
+/* Status-specific styling without extra data attributes */
+.bento-card:has(.ecosystem-card-status:nth-child(2)) .ecosystem-card-status{}
+
+/* Default / internal */
+.ecosystem-card-status{
+  background:rgba(22,75,112,.08);
+  color:#164B70;
+  border-color:rgba(22,75,112,.18);
+}
+.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{}
+
+/* Named application status colors */
+.bento-card:has(h3:nth-of-type(1)){}
+
+/* Use adjacent card titles to preserve current HTML structure */
+.bento-card:has(h3:nth-child(n)) .ecosystem-card-status{}
+
+.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{}
+
+.bento-card:has(h3){
+  --status-bg:rgba(22,75,112,.08);
+  --status-color:#164B70;
+  --status-border:rgba(22,75,112,.18);
+}
+.bento-card:has(h3:is(:where(*))) .ecosystem-card-status{
+  background:var(--status-bg);
+  color:var(--status-color);
+  border-color:var(--status-border);
+}
+
+/* Active systems */
+.bento-card:has(h3:nth-child(n)){}
+
+/* Stable selectors using card content */
+.bento-card:has(h3){}
+
+/* PANDORA / SiMerpati */
+.bento-card:has(h3) .ecosystem-card-status.status-active{}
+
+.ecosystem-card-status.status-active{
+  background:rgba(28,126,79,.10);
+  color:#17663f;
+  border-color:rgba(28,126,79,.22);
+}
+.ecosystem-card-status.status-internal{
+  background:rgba(22,75,112,.08);
+  color:#164B70;
+  border-color:rgba(22,75,112,.18);
+}
+.ecosystem-card-status.status-development{
+  background:rgba(176,116,0,.10);
+  color:#7A5200;
+  border-color:rgba(176,116,0,.22);
+}
+.ecosystem-card-status.status-uat{
+  background:rgba(110,76,170,.10);
+  color:#6542A5;
+  border-color:rgba(110,76,170,.22);
+}
+[data-theme="dark"] .ecosystem-card-status.status-active{color:#7ED7A7;background:rgba(76,175,120,.14);border-color:rgba(126,215,167,.25)}
+[data-theme="dark"] .ecosystem-card-status.status-internal{color:#9BCBF0;background:rgba(155,203,240,.10);border-color:rgba(155,203,240,.22)}
+[data-theme="dark"] .ecosystem-card-status.status-development{color:#E9CB8D;background:rgba(233,203,141,.10);border-color:rgba(233,203,141,.22)}
+[data-theme="dark"] .ecosystem-card-status.status-uat{color:#C5A8FF;background:rgba(197,168,255,.10);border-color:rgba(197,168,255,.22)}
