@@ -339,6 +339,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color:#8B6A32;margin-bottom:.25rem;
 }
 .struktur-leader h3{font-size:1.18rem;font-weight:800;margin-bottom:.35rem}
+.struktur-leader{cursor:pointer;transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out),border-color .3s ease}
+.struktur-leader:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(181,139,66,.62)}
+.struktur-leader:focus-visible{outline:3px solid rgba(181,139,66,.35);outline-offset:4px}
 .struktur-leader p{color:var(--text-muted);font-size:.9rem;line-height:1.7;margin:0}
 @media(max-width:640px){
   .struktur-leader{grid-template-columns:1fr;text-align:center;padding:1.4rem}
@@ -681,7 +684,7 @@ a.bento-card { display:block; }
       <h2 class="section-title">Struktur Bagian Perjalanan</h2>
       <p class="section-subtitle">Kepala Bagian Perjalanan memimpin dan mengoordinasikan tiga subbagian pelaksana di bawah Bagian Perjalanan</p>
     </div>
-    <div class="struktur-leader reveal">
+    <div class="struktur-leader reveal" role="button" tabindex="0" onclick="openModal('modal-kepala')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-kepala')}">
       <div class="struktur-leader-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Kepala Bagian Perjalanan" class="struktur-logo-img" width="96" height="96" decoding="async"></div>
       <div>
         <span class="struktur-leader-eyebrow">Pimpinan Unit</span>
@@ -941,6 +944,9 @@ a.bento-card { display:block; }
     </div>
   </div>
 </section>
+
+<!-- MODAL — PIMPINAN UNIT -->
+<div class="modal-overlay" id="modal-kepala"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-kepala')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Kepala Bagian Perjalanan" class="struktur-logo-img" width="96" height="96" decoding="async"></div><span class="modal-tag">Pimpinan Unit</span><h3>Kepala Bagian Perjalanan</h3><p>Memimpin dan mengoordinasikan pelaksanaan tugas Bagian Perjalanan, melakukan pengendalian, pembinaan, monitoring, dan evaluasi penyelenggaraan administrasi perjalanan dinas, serta memastikan koordinasi antar-subbagian berjalan efektif, tertib, dan akuntabel.</p><p>Dalam pelaksanaan tugasnya, Kepala Bagian Perjalanan mengoordinasikan <strong>Subbagian Perjalanan Dinas Dalam Negeri Dewan</strong>, <strong>Subbagian Perjalanan Dinas Dalam Negeri Setjen</strong>, dan <strong>Subbagian Perjalanan Dinas Luar Negeri</strong>.</p></div></div>
 
 <!-- MODALS — SUBBAGIAN -->
 <div class="modal-overlay" id="modal-dewan"><div class="modal-box"><button class="modal-close" onclick="closeModal('modal-dewan')"><svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg></button><div class="modal-icon struktur-logo"><img src="/assets/struktur-dn-dewan.svg?v=20260926-2" alt="Subbagian Perjalanan Dinas Dalam Negeri Dewan" class="struktur-logo-img" width="96" height="96" decoding="async"></div><span class="modal-tag">Subbagian</span><h3>Subbagian Perjalanan Dinas Dalam Negeri Dewan</h3><p>Bertugas melakukan pengelolaan administrasi perjalanan dinas dalam negeri bagi <strong>Anggota DPR RI</strong>. Meliputi penyusunan rencana perjalanan, pengajuan SPPD, pengurusan tiket dan akomodasi, hingga pertanggungjawaban biaya perjalanan dinas.</p><p>Seluruh proses kini terintegrasi melalui aplikasi <strong>SiMerpati</strong> dan <strong>Aplikasi Perjalanan Dinas</strong>, memungkinkan Anggota DPR dan Tenaga Ahli memantau proses perjalanan dinas secara real-time.</p><div class="modal-actions"><a href="https://www.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Portal DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a><a href="https://jdih.dpr.go.id" target="_blank" rel="noopener noreferrer" class="btn btn-outline">JDIH Setjen DPR RI <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></a></div></div></div>
