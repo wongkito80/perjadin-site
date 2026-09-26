@@ -447,7 +447,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ecosystem-step:focus-visible{outline:3px solid rgba(181,139,66,.30);outline-offset:3px}
 .ecosystem-step-icon{width:42px;height:42px;margin:0 auto .65rem;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;box-shadow:0 7px 18px rgba(22,75,112,.18)}
 .ecosystem-step-hint{display:block;margin-top:.55rem;font-size:.67rem;font-weight:700;color:var(--brand);opacity:.82}
-.ecosystem-step:not(:last-child)::after{content:'→';position:absolute;right:-.62rem;top:50%;transform:translate(50%,-50%);z-index:4;color:var(--gold);font-size:1.08rem;font-weight:800;line-height:1;opacity:.88;pointer-events:none;text-shadow:0 1px 0 var(--card-bg);transition:transform .22s ease,opacity .22s ease,color .22s ease}
+.ecosystem-step:not(:last-child)::after{content:'→';position:absolute;right:-.62rem;top:50%;transform:translate(50%,-50%);z-index:4;color:var(--brand);font-size:1.08rem;font-weight:800;line-height:1;opacity:.92;pointer-events:none;text-shadow:0 1px 0 var(--card-bg);transition:transform .22s ease,opacity .22s ease,color .22s ease,text-shadow .22s ease}
 .ecosystem-step-num{display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin-bottom:.3rem}
 .ecosystem-step strong{display:block;font-size:.82rem;line-height:1.35}
 .ecosystem-note{max-width:900px;margin:-.5rem auto 1.6rem;text-align:center;color:var(--text-muted);font-size:.88rem;line-height:1.65}
@@ -854,13 +854,19 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
 /* Ecosystem flow arrow refinement 2026-09-26 */
 .ecosystem-step:hover:not(:last-child)::after,
 .ecosystem-step:focus-visible:not(:last-child)::after{
-  color:var(--gold-light);
+  color:var(--gold);
   opacity:1;
   transform:translate(calc(50% + 3px),-50%);
+  text-shadow:0 1px 0 var(--card-bg),0 0 8px rgba(181,139,66,.12);
 }
 [data-theme="dark"] .ecosystem-step:not(:last-child)::after{
   color:var(--gold-light);
-  opacity:.9;
+  opacity:.94;
+}
+[data-theme="dark"] .ecosystem-step:hover:not(:last-child)::after,
+[data-theme="dark"] .ecosystem-step:focus-visible:not(:last-child)::after{
+  color:#F1D9A7;
+  text-shadow:0 1px 0 var(--card-bg),0 0 9px rgba(233,203,141,.16);
 }
 @media (prefers-reduced-motion: reduce){
   .ecosystem-step:not(:last-child)::after{transition:none}
