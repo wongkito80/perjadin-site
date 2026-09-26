@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="t">
+<title id="t">Logo Pertanggungjawaban Perjalanan Dinas</title>
+<defs>
+  <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35c8f5"/><stop offset="1" stop-color="#2457e6"/></linearGradient>
+  <linearGradient id="b2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3268ff"/><stop offset="1" stop-color="#102a68"/></linearGradient>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe27a"/><stop offset="1" stop-color="#e5a91e"/></linearGradient>
+</defs>
+<path d="M45 84 128 36l83 48v92l-83 48-83-48Z" fill="url(#b2)"/>
+<path d="M45 84 128 132v92L45 176Z" fill="url(#b1)"/>
+<path d="M128 36 211 84l-83 48-83-48Z" fill="#3f6cff"/>
+<path d="M84 72h58l30 25v87H84Z" fill="#fff"/>
+<path d="M142 72v26h30" fill="#bfeeff"/>
+<rect x="99" y="109" width="10" height="10" rx="2" fill="#376be8"/>
+<rect x="116" y="110" width="40" height="8" rx="4" fill="#376be8"/>
+<rect x="99" y="130" width="10" height="10" rx="2" fill="#3d91eb"/>
+<rect x="116" y="131" width="47" height="8" rx="4" fill="#3d91eb"/>
+<rect x="99" y="151" width="10" height="10" rx="2" fill="#53b6ef"/>
+<rect x="116" y="152" width="42" height="8" rx="4" fill="#53b6ef"/>
+<path d="M57 164c35 19 83 16 122-5 11-6 20-13 28-21" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round"/>
+<rect x="101" y="151" width="55" height="42" rx="8" fill="#173f9e"/>
+<rect x="107" y="157" width="43" height="8" rx="4" fill="#5fd1f4"/>
+<circle cx="143" cy="174" r="5" fill="#f3b72d"/>
+<circle cx="176" cy="128" r="28" fill="url(#g)"/>
+<path d="m163 129 9 9 18-21" fill="none" stroke="#173f9e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
