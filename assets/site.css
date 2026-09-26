@@ -891,3 +891,89 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   color:#08233A;
   box-shadow:0 9px 22px rgba(0,0,0,.25),0 0 0 3px rgba(155,203,240,.08);
 }
+
+
+/* FAQ interaction refinement 2026-09-26 */
+.faq-item{
+  position:relative;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background-color .22s ease;
+}
+.faq-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--brand),var(--gold));
+  transform:scaleY(0);
+  transform-origin:center;
+  transition:transform .24s ease;
+  pointer-events:none;
+}
+.faq-item:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(20,45,69,.10);
+  border-color:rgba(22,75,112,.24);
+}
+.faq-item:hover::before{
+  transform:scaleY(.58);
+}
+.faq-item:hover .faq-question{
+  color:var(--brand-dark);
+}
+.faq-item:hover .faq-icon{
+  transform:scale(1.06);
+  border-color:rgba(181,139,66,.35);
+}
+.faq-item.open{
+  border-color:rgba(22,75,112,.30);
+  box-shadow:0 10px 26px rgba(20,45,69,.10);
+}
+.faq-item.open::before{
+  transform:scaleY(1);
+}
+.faq-item.open .faq-question{
+  color:var(--brand-dark);
+}
+.faq-icon{
+  border:1px solid transparent;
+  transition:
+    transform .24s ease,
+    background-color .24s ease,
+    color .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease;
+}
+.faq-item.open .faq-icon{
+  box-shadow:0 4px 12px rgba(22,75,112,.14);
+}
+[data-theme="dark"] .faq-item:hover{
+  border-color:rgba(155,203,240,.28);
+  box-shadow:0 8px 22px rgba(0,0,0,.20);
+}
+[data-theme="dark"] .faq-item.open{
+  border-color:rgba(155,203,240,.34);
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+}
+[data-theme="dark"] .faq-item:hover .faq-question,
+[data-theme="dark"] .faq-item.open .faq-question{
+  color:var(--brand);
+}
+@media (prefers-reduced-motion: reduce){
+  .faq-item,
+  .faq-item::before,
+  .faq-icon{
+    transition:none;
+  }
+  .faq-item:hover{
+    transform:none;
+  }
+  .faq-item:hover .faq-icon{
+    transform:none;
+  }
+}
