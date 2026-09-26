@@ -745,3 +745,27 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   .digital-timeline::before { left: .24rem; }
   .digital-timeline .digital-history-card::before { left: -1.28rem; top: 1.25rem; }
 }
+
+
+/* Ecosystem lifecycle status 2026-09-26 */
+.ecosystem-card-status{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:.28rem .65rem;
+  border-radius:999px;
+  background:rgba(22,75,112,.08);
+  border:1px solid rgba(22,75,112,.18);
+  color:var(--brand);
+  font-size:.65rem;
+  font-weight:800;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+  line-height:1.2;
+}
+@media(max-width:600px){
+  .ecosystem-card-status{position:static;margin:0 0 .7rem 0;max-width:100%;white-space:normal;}
+}
