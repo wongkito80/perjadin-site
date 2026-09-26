@@ -990,3 +990,31 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
   color:rgba(255,255,255,.55);
 }
 .footer-disclaimer strong{color:rgba(255,255,255,.8)}
+
+
+/* External asset resilience 2026-09-26 */
+.external-image-missing{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(145deg,#F6F9FC,#E5EDF5)!important;
+  border:1px solid #CEDBE7!important;
+}
+.external-image-missing::after{
+  content:"DPR RI";
+  color:var(--brand);
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+[data-theme="dark"] .external-image-missing{
+  background:#203B54!important;
+  border-color:#4C6276!important;
+}
+[data-theme="dark"] .external-image-missing::after{color:#D6E7F5}
+.footer-photo-credit{
+  margin:-.35rem 0 1rem;
+  color:rgba(255,255,255,.45);
+  font-size:.69rem;
+  line-height:1.5;
+}
