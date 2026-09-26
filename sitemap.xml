@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://perjadin.site/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://perjadin.site/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://perjadin.site/en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://perjadin.site/" />
   </url>
   <url>
     <loc>https://perjadin.site/en.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://perjadin.site/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://perjadin.site/en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://perjadin.site/" />
   </url>
 </urlset>
