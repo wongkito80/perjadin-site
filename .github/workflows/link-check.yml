@@ -1,4 +1,4 @@
-name: External Link Check
+name: Site Quality Checks
 
 on:
   workflow_dispatch:
@@ -7,6 +7,8 @@ on:
       - "index.html"
       - "en.html"
       - "scripts/check_links.py"
+      - "scripts/check_bilingual.py"
+      - "assets/site.js"
       - ".github/workflows/link-check.yml"
   schedule:
     - cron: "0 2 * * 0"
@@ -25,5 +27,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Check bilingual structural parity
+        run: python scripts/check_bilingual.py
       - name: Check external links
         run: python scripts/check_links.py
