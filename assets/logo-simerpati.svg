@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="t">
+<title id="t">SiMerpati</title>
+<defs>
+  <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35c8f5"/><stop offset="1" stop-color="#2457e6"/></linearGradient>
+  <linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2f66ff"/><stop offset="1" stop-color="#102a68"/></linearGradient>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe27a"/><stop offset="1" stop-color="#e5a91e"/></linearGradient>
+</defs>
+<path d="M45 84 128 36l83 48v92l-83 48-83-48Z" fill="url(#n)"/>
+<path d="M45 84 128 132v92L45 176Z" fill="url(#b)"/>
+<path d="M128 36 211 84l-83 48-83-48Z" fill="#3f6cff"/>
+<rect x="92" y="69" width="72" height="124" rx="16" fill="#f8fbff"/>
+<rect x="102" y="83" width="52" height="78" rx="8" fill="#dceefa"/>
+<rect x="113" y="97" width="30" height="7" rx="3.5" fill="#2e61d5"/>
+<rect x="113" y="114" width="30" height="7" rx="3.5" fill="#3e93ea"/>
+<rect x="113" y="131" width="24" height="7" rx="3.5" fill="#57b9ef"/>
+<circle cx="128" cy="176" r="5" fill="#2750ae"/>
+<circle cx="82" cy="146" r="22" fill="url(#g)"/>
+<path d="M62 175c6-18 34-18 40 0" fill="url(#g)"/>
+<path d="M155 112c17 6 29 16 39 30" fill="none" stroke="url(#g)" stroke-width="9" stroke-linecap="round"/>
+<path d="m183 125 18-6-6 17 12 7-24 1-11 14 4-19-11-8Z" fill="url(#g)"/>
+</svg>
