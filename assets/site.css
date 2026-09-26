@@ -977,3 +977,16 @@ section.section { content-visibility: auto; contain-intrinsic-size: 900px; }
     transform:none;
   }
 }
+
+
+/* Footer disclaimer cleanup 2026-09-26 */
+.footer-disclaimer{
+  margin:0 0 1.25rem;
+  padding:1rem 1.2rem;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  font-size:.78rem;
+  line-height:1.6;
+  color:rgba(255,255,255,.55);
+}
+.footer-disclaimer strong{color:rgba(255,255,255,.8)}
