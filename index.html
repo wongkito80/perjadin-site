@@ -682,7 +682,45 @@ a.bento-card { display:block; }
 </div>
 </section>
 
-<!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section section-alt" id="regulasi">
+<!-- Link audit 2026-09-21: document identities matched to official metadata. SOP 2012 replaced with identifiable Persekjen 14/2016. Unrelated Permenkominfo 16/2014 removed. B-32 letter: institutional copy hosted by UNDIP. --><section class="section" id="struktur">
+  <div class="section-inner">
+    <div class="section-header centered reveal">
+      <div class="section-label">Struktur Organisasi</div>
+      <h2 class="section-title">Struktur Bagian Perjalanan</h2>
+      <p class="section-subtitle">Kepala Bagian Perjalanan memimpin dan mengoordinasikan tiga subbagian pelaksana di bawah Bagian Perjalanan</p>
+    </div>
+    <div class="struktur-leader reveal" role="button" tabindex="0" onclick="openModal('modal-kepala')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-kepala')}">
+      <div class="struktur-leader-icon struktur-logo"><img src="/assets/struktur-kepala-bagian.svg?v=20260926-2" alt="Kepala Bagian Perjalanan" class="struktur-logo-img" width="96" height="96" decoding="async"></div>
+      <div>
+        <span class="struktur-leader-eyebrow">Pimpinan Unit</span>
+        <h3>Kepala Bagian Perjalanan</h3>
+        <p>Memimpin dan mengoordinasikan pelaksanaan tugas Bagian Perjalanan, melakukan pengendalian, pembinaan, monitoring, dan evaluasi penyelenggaraan administrasi perjalanan dinas, serta memastikan koordinasi antar-subbagian berjalan efektif, tertib, dan akuntabel.</p>
+      </div>
+    </div>
+    <div class="struktur-grid">
+      <div class="struktur-card reveal" onclick="openModal('modal-dewan')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-dewan.svg?v=20260926-2" alt="Subbagian Perjalanan Dinas Dalam Negeri Dewan" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>Subbagian Perjalanan Dinas Dalam Negeri Dewan</h3>
+        <p>Melakukan pengelolaan administrasi perjalanan dinas dalam negeri bagi Anggota DPR RI.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-1" onclick="openModal('modal-setjen')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-dn-setjen.svg?v=20260926-2" alt="Subbagian Perjalanan Dinas Dalam Negeri Setjen" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>Subbagian Perjalanan Dinas Dalam Negeri Setjen</h3>
+        <p>Pengelolaan administrasi perjalanan dinas dalam negeri bagi pegawai Setjen, serta tata usaha Bagian Perjalanan.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+      <div class="struktur-card reveal reveal-delay-2" onclick="openModal('modal-luar')">
+        <div class="struktur-icon struktur-logo"><img src="/assets/struktur-luar-negeri.svg?v=20260926-2" alt="Subbagian Perjalanan Dinas Luar Negeri" class="struktur-logo-img" width="96" height="96" loading="lazy" decoding="async"></div>
+        <h3>Subbagian Perjalanan Dinas Luar Negeri</h3>
+        <p>Pengelolaan administrasi perjalanan dinas luar negeri bagi Anggota DPR RI dan pegawai Setjen.</p>
+        <span class="struktur-link">Lihat Detail <svg class="ui-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="regulasi">
   <div class="section-inner">
     <div class="section-header centered reveal">
       <div class="section-label">Landasan Regulasi</div>
@@ -1221,6 +1259,6 @@ document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 })();
 </script>
 <!-- LANG-NAV-ID-END -->
-<!-- deploy-refresh: 2026-09-26-0806 -->
+<!-- deploy-refresh: restore-struktur-2026-09-26-0812 -->
 </body>
 </html>
