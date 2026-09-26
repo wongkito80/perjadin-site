@@ -34,3 +34,21 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify public social preview endpoints
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -u
+          sleep 8
+          echo "Checking custom domain with a social-crawler user agent..."
+          if curl -fL --retry 3 --retry-delay 5 --max-time 25 -A "facebookexternalhit/1.1" https://perjadin.site/ -o /tmp/perjadin-home.html; then
+            grep -q 'property="og:title"' /tmp/perjadin-home.html && echo "og:title found"
+            grep -q 'property="og:image"' /tmp/perjadin-home.html && echo "og:image found"
+          else
+            echo "::warning::Custom domain could not be fetched after deployment. Check DNS/custom-domain/HTTPS settings."
+          fi
+          if curl -fL --retry 3 --retry-delay 5 --max-time 25 -A "facebookexternalhit/1.1" https://raw.githubusercontent.com/wongkito80/perjadin-site/main/assets/og-perjadin.png -o /tmp/og-perjadin.png; then
+            test -s /tmp/og-perjadin.png && echo "Open Graph image endpoint is reachable"
+          else
+            echo "::warning::Open Graph image endpoint could not be fetched."
+          fi
