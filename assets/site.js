@@ -5,19 +5,20 @@ const uiText=pageLang==='en'?{
 }:{light:'Aktifkan mode terang',dark:'Aktifkan mode gelap',close:'Tutup dialog',nav:'Buka atau tutup navigasi'};
 
 
+const closeLoader = () => {
+  const loader = document.getElementById('loader');
+  if (!loader || loader.classList.contains('hidden')) return;
+  loader.classList.add('hidden');
+  document.body.classList.remove('no-scroll');
+};
+
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-    document.body.classList.remove('no-scroll');
-  }, 700);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(closeLoader, reduceMotion ? 120 : 1450);
 });
-setTimeout(() => {
-  const l = document.getElementById('loader');
-  if (l && !l.classList.contains('hidden')) {
-    l.classList.add('hidden');
-    document.body.classList.remove('no-scroll');
-  }
-}, 3000);
+
+// Safety fallback: never allow the opening screen to trap the page.
+setTimeout(closeLoader, 2600);
 
 function updateThemeIcon() {
  const button=document.getElementById("themeToggle");
