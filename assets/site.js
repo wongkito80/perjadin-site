@@ -144,6 +144,13 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
+document.querySelectorAll('.counter').forEach(c => {
+  if (c.closest('a[href="#regulasi"]')) {
+    const regulationCount = document.querySelectorAll('#regulasi .regulasi-item').length;
+    if (regulationCount) c.dataset.target = regulationCount;
+  }
+});
+
 function animateCounter(el) {
   const target = +el.dataset.target;
   const dur = 2000;
